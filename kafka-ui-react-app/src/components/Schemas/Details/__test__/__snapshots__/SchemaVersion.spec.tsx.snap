@@ -172,6 +172,7 @@ exports[`SchemaVersion matches snapshot 1`] = `
           "bottom": "#F1F2F3",
           "top": "#F1F2F3",
         },
+        "filterIcon": "#4F4FFF",
         "overlay": "rgba(10, 10, 10, 0.1)",
         "shadow": "rgba(0, 0, 0, 0.1)",
       },

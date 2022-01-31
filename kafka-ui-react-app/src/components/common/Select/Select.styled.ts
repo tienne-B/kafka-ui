@@ -59,7 +59,7 @@ export const OptionList = styled.ul`
   position: absolute;
   top: 100%;
   left: 0;
-  max-height: 114px;
+  max-height: 135px;
   margin-top: 4px;
   background-color: ${(props) => props.theme.select.backgroundColor.normal};
   border: 1px ${(props) => props.theme.select.borderColor.normal} solid;
@@ -68,7 +68,7 @@ export const OptionList = styled.ul`
   line-height: 18px;
   width: 100%;
   color: ${(props) => props.theme.select.color.normal};
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 10;
 `;
 

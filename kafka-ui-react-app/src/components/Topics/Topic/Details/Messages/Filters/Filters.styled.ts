@@ -83,3 +83,128 @@ export const MetricsIcon = styled.div`
   padding-right: 6px;
   height: 12px;
 `;
+
+export const ClearAll = styled.span`
+  color: ${({ theme }) => theme.metrics.filters.color.normal};
+  font-size: 12px;
+  cursor: pointer;
+  font-family: Inter;
+`;
+
+export const MessageFilterModal = styled.div`
+  height: auto;
+  width: 560px;
+  border-radius: 8px;
+  background: ${({ theme }) => theme.modal.backgroundColor};
+  position: absolute;
+  left: 25%;
+  border: 1px solid ${({ theme }) => theme.breadcrumb};
+  box-shadow: ${({ theme }) => theme.modal.shadow};
+  padding: 16px;
+`;
+
+export const FilterTitle = styled.h3`
+  line-height: 32px;
+  font-family: Inter;
+  font-size: 20px;
+  margin-bottom: 40px;
+`;
+
+export const NewFilterIcon = styled.div`
+  color: ${({ theme }) => theme.modal.filterIcon};
+  padding-right: 6px;
+  height: 12px;
+  cursor: pointer;
+`;
+
+export const CreatedFilter = styled.p`
+  margin: 25px 0 10px;
+  color: ${({ theme }) => theme.breadcrumb};
+  font-size: 14px;
+  line-height: 20px;
+`;
+
+export const SavedFiltersContainer = styled.div`
+  overflow-y: auto;
+  height: 195px;
+  // display: flex;
+  // flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+  // gap: 10px;
+`;
+
+export const SavedFilterName = styled.div`
+  font-size: 14px;
+  line-height: 20px;
+`;
+
+export const FilterButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+`;
+
+export const CancelButton = styled.button`
+  margin-right: 10px;
+  background: ${({ theme }) => theme.button.secondary.backgroundColor.normal};
+  border: none;
+  border-radius: 4px;
+  padding: 0 12px;
+  width: 86px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+`;
+
+export const AddButton = styled.button`
+  background: ${({ theme }) => theme.button.primary.backgroundColor.normal};
+  border: none;
+  border-radius: 4px;
+  padding: 0 12px;
+  width: 86px;
+  height: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: ${({ theme }) => theme.layout.stuffColor};
+  cursor: pointer;
+`;
+
+export const AddFiltersIcon = styled.div`
+  color: ${({ theme }) => theme.metrics.filters.color.icon};
+  padding-right: 6px;
+  height: 12px;
+  cursor: pointer;
+`;
+
+export const AddedFiltersWrapper = styled.div`
+  padding: 5px 0;
+`;
+
+export const DeleteSavedFilter = styled.div`
+  color: ${({ theme }) => theme.breadcrumb};
+  display: none;
+  cursor: pointer;
+`;
+
+export const SavedFilter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5px;
+  height: 32px;
+  align-items: center;
+  &:hover ${DeleteSavedFilter} {
+    display: block;
+  }
+  &:hover {
+    background: ${({ theme }) => theme.layout.stuffColor};
+  }
+`;
+
+export const CheckboxWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;

@@ -21,6 +21,8 @@ import { BASE_PARAMS } from 'lib/constants';
 import Input from 'components/common/Input/Input';
 import Select from 'components/common/Select/Select';
 import { Button } from 'components/common/Button/Button';
+import IconButtonWrapper from 'components/common/Icons/IconButtonWrapper';
+import AddFilterModal from 'components/Topics/Topic/Details/Messages/Filters/AddFilterModal';
 
 import * as S from './Filters.styled';
 import {
@@ -55,6 +57,7 @@ const SeekTypeOptions = [
 const SeekDirectionOptions = [
   { value: SeekDirection.FORWARD, label: 'Oldest First' },
   { value: SeekDirection.BACKWARD, label: 'Newest First' },
+  { value: 'LIVE', label: 'Live Mode' },
 ];
 
 const Filters: React.FC<FiltersProps> = ({
@@ -72,6 +75,9 @@ const Filters: React.FC<FiltersProps> = ({
 }) => {
   const location = useLocation();
   const history = useHistory();
+
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleIsOpen = () => setIsOpen(!isOpen);
 
   const source = React.useRef<EventSource | null>(null);
 
@@ -291,6 +297,7 @@ const Filters: React.FC<FiltersProps> = ({
             onChange={setSelectedPartitions}
             labelledBy="Select partitions"
           />
+          <S.ClearAll>Clear all</S.ClearAll>
           {isFetching ? (
             <Button
               type="button"
@@ -323,6 +330,14 @@ const Filters: React.FC<FiltersProps> = ({
           options={SeekDirectionOptions}
         />
       </div>
+      <S.AddedFiltersWrapper>
+        <IconButtonWrapper onClick={toggleIsOpen} aria-hidden>
+          <S.AddFiltersIcon>
+            <i className="fas fa-plus fa-sm" />
+          </S.AddFiltersIcon>
+        </IconButtonWrapper>
+      </S.AddedFiltersWrapper>
+      {isOpen && <AddFilterModal toggleIsOpen={toggleIsOpen} />}
       <S.FiltersMetrics>
         <p style={{ fontSize: 14 }}>{isFetching && phaseMessage}</p>
         <S.Metric title="Elapsed Time">
