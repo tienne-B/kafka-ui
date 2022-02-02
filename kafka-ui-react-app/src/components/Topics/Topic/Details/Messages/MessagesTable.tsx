@@ -32,7 +32,6 @@ const MessagesTable: React.FC = () => {
 
   const messages = useSelector(getTopicMessges);
   const isFetching = useSelector(getIsTopicMessagesFetching);
-  console.log(messages, 'sssss');
 
   const handleNextClick = React.useCallback(() => {
     const seekTo = searchParams.get('seekTo');
@@ -60,7 +59,6 @@ const MessagesTable: React.FC = () => {
       )
         .map(({ offset, partition }) => `${partition}::${offset}`)
         .join(',');
-      console.log(nextSeekTo, 'nextSeekTo');
 
       searchParams.set('seekTo', nextSeekTo);
 
@@ -77,8 +75,6 @@ const MessagesTable: React.FC = () => {
         const [partition] = item.split('::');
         return { offset: 0, partition: parseInt(partition, 10) };
       });
-      console.log(messages, 'sssss');
-      console.log(selectedPartitions, 'selectedPartitions');
       const messageUniqs = map(groupBy(messages, 'partition'), (v) =>
         searchParams.get('seekDirection') === SeekDirection.BACKWARD
           ? minBy(v, 'offset')
@@ -87,8 +83,6 @@ const MessagesTable: React.FC = () => {
         offset: message?.offset || 0,
         partition: message?.partition || 0,
       }));
-      // console.log(groupBy(messages, 'partition'),'messages')
-      // console.log(messageUniqs,'messageUniqs')
       const previousSeekTo = compact(
         map(
           groupBy(concat(selectedPartitions, messageUniqs), 'partition'),
@@ -98,10 +92,8 @@ const MessagesTable: React.FC = () => {
         .map(({ offset, partition }) => `${partition}::${offset}`)
         .join(',');
       // const previousSeekTo = '0::501';
-      console.log(previousSeekTo, 'previousSeekTo');
 
       searchParams.set('seekTo', previousSeekTo);
-      // console.log(searchParams.toString(),'searchParams')
       history.push({
         search: `?${searchParams.toString()}`,
       });

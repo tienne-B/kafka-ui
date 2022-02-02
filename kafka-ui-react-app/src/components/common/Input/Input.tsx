@@ -24,7 +24,6 @@ const Input: React.FC<InputProps> = ({
   ...rest
 }) => {
   const methods = useFormContext();
-  console.log(methods);
   return (
     <div className={className}>
       {leftIcon && (

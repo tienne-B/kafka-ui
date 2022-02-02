@@ -506,6 +506,7 @@ exports[`Filters component matches the snapshot 1`] = `
             <div>
               <ul
                 class="c6"
+                id="selectSeekType"
                 role="listbox"
               >
                 <li
@@ -1199,6 +1200,7 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
             <div>
               <ul
                 class="c6"
+                id="selectSeekType"
                 role="listbox"
               >
                 <li
