@@ -166,6 +166,7 @@ const theme = {
     },
     overlay: Colors.transparency[10],
     shadow: Colors.transparency[20],
+    filterIcon: Colors.brand[50],
   },
   table: {
     th: {
