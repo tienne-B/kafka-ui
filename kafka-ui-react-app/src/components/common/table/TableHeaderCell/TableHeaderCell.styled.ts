@@ -14,8 +14,8 @@ export const Title = styled.span<TitleProps>(
     line-height: 16px;
     letter-spacing: 0em;
     text-align: left;
+    display: inline-block;
     justify-content: start;
-    display: flex;
     align-items: center;
     background: ${table.th.backgroundColor.normal};
     cursor: default;

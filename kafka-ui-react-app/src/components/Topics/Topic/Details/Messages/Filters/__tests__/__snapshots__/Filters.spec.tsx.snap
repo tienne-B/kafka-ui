@@ -426,7 +426,7 @@ exports[`Filters component matches the snapshot 1`] = `
   outline: none;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -444,7 +444,7 @@ exports[`Filters component matches the snapshot 1`] = `
   padding-bottom: 16px;
 }
 
-.c17 {
+.c18 {
   color: #73848C;
   font-size: 12px;
   display: -webkit-box;
@@ -453,7 +453,7 @@ exports[`Filters component matches the snapshot 1`] = `
   display: flex;
 }
 
-.c18 {
+.c19 {
   color: #171A1C;
   padding-right: 6px;
   height: 12px;
@@ -475,6 +475,20 @@ exports[`Filters component matches the snapshot 1`] = `
 
 .c13 {
   padding: 5px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.c16 {
+  border-radius: 4px;
+  width: 115px;
+  height: 24px;
+  background: #F1F2F3;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 <body>
@@ -635,19 +649,24 @@ exports[`Filters component matches the snapshot 1`] = `
             />
           </div>
         </span>
+        <div
+          class="c16"
+        >
+          Filter Name
+        </div>
       </div>
       <div
-        class="c16"
+        class="c17"
       >
         <p
           style="font-size: 14px;"
         />
         <div
-          class="c17"
+          class="c18"
           title="Elapsed Time"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <i
               class="far fa-clock"
@@ -659,11 +678,11 @@ exports[`Filters component matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c18"
           title="Bytes Consumed"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <i
               class="fas fa-arrow-down"
@@ -674,11 +693,11 @@ exports[`Filters component matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c18"
           title="Messages Consumed"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <i
               class="far fa-file-alt"
@@ -1121,7 +1140,7 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   outline: none;
 }
 
-.c16 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1139,7 +1158,7 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   padding-bottom: 16px;
 }
 
-.c17 {
+.c18 {
   color: #73848C;
   font-size: 12px;
   display: -webkit-box;
@@ -1148,7 +1167,7 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   display: flex;
 }
 
-.c18 {
+.c19 {
   color: #171A1C;
   padding-right: 6px;
   height: 12px;
@@ -1170,6 +1189,20 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
 
 .c13 {
   padding: 5px 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.c16 {
+  border-radius: 4px;
+  width: 115px;
+  height: 24px;
+  background: #F1F2F3;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 <div>
@@ -1329,19 +1362,24 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
             />
           </div>
         </span>
+        <div
+          class="c16"
+        >
+          Filter Name
+        </div>
       </div>
       <div
-        class="c16"
+        class="c17"
       >
         <p
           style="font-size: 14px;"
         />
         <div
-          class="c17"
+          class="c18"
           title="Elapsed Time"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <i
               class="far fa-clock"
@@ -1353,11 +1391,11 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c18"
           title="Bytes Consumed"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <i
               class="fas fa-arrow-down"
@@ -1368,11 +1406,11 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c18"
           title="Messages Consumed"
         >
           <div
-            class="c18"
+            class="c19"
           >
             <i
               class="far fa-file-alt"

@@ -143,33 +143,7 @@ export const FilterButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 25px;
-`;
-
-export const CancelButton = styled.button`
-  margin-right: 10px;
-  background: ${({ theme }) => theme.button.secondary.backgroundColor.normal};
-  border: none;
-  border-radius: 4px;
-  padding: 0 12px;
-  width: 86px;
-  height: 32px;
-  font-size: 14px;
-  line-height: 20px;
-  cursor: pointer;
-`;
-
-export const AddButton = styled.button`
-  background: ${({ theme }) => theme.button.primary.backgroundColor.normal};
-  border: none;
-  border-radius: 4px;
-  padding: 0 12px;
-  width: 86px;
-  height: 32px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: ${({ theme }) => theme.layout.stuffColor};
-  cursor: pointer;
+  gap: 10px;
 `;
 
 export const AddFiltersIcon = styled.div`
@@ -181,6 +155,8 @@ export const AddFiltersIcon = styled.div`
 
 export const AddedFiltersWrapper = styled.div`
   padding: 5px 0;
+  display: flex;
+  gap: 10px;
 `;
 
 export const DeleteSavedFilter = styled.div`
@@ -207,4 +183,13 @@ export const CheckboxWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+`;
+
+export const AddedFilter = styled.div`
+  border-radius: 4px;
+  width: 115px;
+  height: 24px;
+  background: ${({ theme }) => theme.layout.stuffColor};
+  font-size: 14px;
+  line-height: 20px;
 `;

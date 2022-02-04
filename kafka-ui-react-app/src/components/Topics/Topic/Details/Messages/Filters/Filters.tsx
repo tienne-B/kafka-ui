@@ -336,6 +336,7 @@ const Filters: React.FC<FiltersProps> = ({
             <i className="fas fa-plus fa-sm" />
           </S.AddFiltersIcon>
         </IconButtonWrapper>
+        <S.AddedFilter>Filter Name</S.AddedFilter>
       </S.AddedFiltersWrapper>
       {isOpen && <AddFilterModal toggleIsOpen={toggleIsOpen} />}
       <S.FiltersMetrics>
