@@ -47,7 +47,10 @@ export interface FiltersProps {
   updateMeta(meta: TopicMessageConsuming): void;
   setIsFetching(status: boolean): void;
 }
-
+export interface MessageFilters {
+  name: string;
+  code: string;
+}
 const PER_PAGE = 100;
 
 const SeekTypeOptions = [
@@ -189,6 +192,26 @@ const Filters: React.FC<FiltersProps> = ({
     source.current.close();
   };
 
+  const [savedFilters, setSavedFilters] = React.useState([
+    { name: 'Saved filter 1', code: 'code' },
+    { name: 'Saved filter 2', code: 'code' },
+    { name: 'Saved filter 3', code: 'code' },
+    { name: 'Saved filter 4', code: 'code' },
+    { name: 'Saved filter 5', code: 'code' },
+  ]);
+  const addFilter = (newFilter: MessageFilters) => {
+    const filters = [...savedFilters];
+    filters.push({ name: newFilter.name, code: newFilter.code });
+    setSavedFilters(filters);
+  };
+  const deleteFilter = (index: number) => {
+    const filters = [...savedFilters];
+    if (localStorage.getItem('activeFilter') === index.toString())
+      localStorage.removeItem('activeFilter');
+    filters.splice(index, 1);
+    setSavedFilters(filters);
+  };
+  const activeFilter = localStorage.getItem('activeFilter');
   // eslint-disable-next-line consistent-return
   React.useEffect(() => {
     if (location.search.length !== 0) {
@@ -336,9 +359,20 @@ const Filters: React.FC<FiltersProps> = ({
             <i className="fas fa-plus fa-sm" />
           </S.AddFiltersIcon>
         </IconButtonWrapper>
-        <S.AddedFilter>Filter Name</S.AddedFilter>
+        {activeFilter !== null && (
+          <S.AddedFilter>
+            {savedFilters[Number(activeFilter)].name}
+          </S.AddedFilter>
+        )}
       </S.AddedFiltersWrapper>
-      {isOpen && <AddFilterModal toggleIsOpen={toggleIsOpen} />}
+      {isOpen && (
+        <AddFilterModal
+          toggleIsOpen={toggleIsOpen}
+          filters={savedFilters}
+          addFilter={addFilter}
+          deleteFilter={deleteFilter}
+        />
+      )}
       <S.FiltersMetrics>
         <p style={{ fontSize: 14 }}>{isFetching && phaseMessage}</p>
         <S.Metric title="Elapsed Time">

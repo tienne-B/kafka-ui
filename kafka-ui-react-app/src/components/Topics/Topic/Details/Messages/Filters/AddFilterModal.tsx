@@ -8,6 +8,7 @@ import { ErrorMessage } from '@hookform/error-message';
 import { Button } from 'components/common/Button/Button';
 import yup from 'lib/yupExtended';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { MessageFilters } from 'components/Topics/Topic/Details/Messages/Filters/Filters';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required(),
@@ -16,65 +17,59 @@ const validationSchema = yup.object().shape({
 
 interface AddFilterModalProps {
   toggleIsOpen(): void;
-}
-interface FormValues {
-  name: string;
-  code: string;
+  filters: MessageFilters[];
+  addFilter(values: MessageFilters): void;
+  deleteFilter(index: number): void;
 }
 
-const AddFilterModal: React.FC<AddFilterModalProps> = ({ toggleIsOpen }) => {
-  const [addFilter, setAddFilter] = React.useState(false);
+const AddFilterModal: React.FC<AddFilterModalProps> = ({
+  toggleIsOpen,
+  filters,
+  addFilter,
+  deleteFilter,
+}) => {
+  const [addNewFilter, setAddNewFilter] = React.useState(false);
   const [toggleSaveFilter, setToggleSaveFilter] = React.useState(false);
-
-  const [savedFilters, setSavedFilters] = React.useState([
-    { id: 1, name: 'Saved filter 1', code: 'code' },
-    { id: 2, name: 'Saved filter 2', code: 'code' },
-    { id: 3, name: 'Saved filter 3', code: 'code' },
-    { id: 4, name: 'Saved filter 4', code: 'code' },
-    { id: 5, name: 'Saved filter 5', code: 'code' },
-  ]);
-
-  const addNewFilterHandler = () => {
-    setAddFilter(!addFilter);
+  const [selectedFilter, setSelectedFilter] = React.useState(-1);
+  const activeFilter = () => {
+    if (selectedFilter > -1) {
+      localStorage.setItem('activeFilter', selectedFilter.toString());
+      toggleIsOpen();
+    }
   };
-  const deleteFilter = (index: number) => {
-    const filters = [...savedFilters];
-    filters.splice(index, 1);
-    setSavedFilters(filters);
-  };
-  const methods = useForm<FormValues>({
+  const methods = useForm<MessageFilters>({
     mode: 'onChange',
     resolver: yupResolver(validationSchema),
   });
-
   const {
     handleSubmit,
     control,
     formState: { isDirty, isSubmitting, isValid, errors },
   } = methods;
   const onSubmit = React.useCallback(
-    async (values: FormValues) => {
-      const newId = savedFilters[savedFilters.length - 1].id + 1;
-      const filters = [...savedFilters];
-      filters.push({ id: newId, name: values.name, code: values.code });
-      setSavedFilters(filters);
-      setAddFilter(!addFilter);
+    async (values: MessageFilters) => {
+      addFilter(values);
+      setAddNewFilter(!addNewFilter);
     },
-    [addFilter, savedFilters]
+    [addFilter, filters, addNewFilter]
   );
   return (
     <S.MessageFilterModal>
       <S.FilterTitle>Add filter</S.FilterTitle>
-      {!addFilter ? (
+      {!addNewFilter ? (
         <>
-          <S.NewFilterIcon onClick={addNewFilterHandler}>
+          <S.NewFilterIcon onClick={() => setAddNewFilter(!addNewFilter)}>
             <i className="fas fa-plus fa-sm" /> New filter
           </S.NewFilterIcon>
           <S.CreatedFilter>Created filters</S.CreatedFilter>
           <S.SavedFiltersContainer>
-            {savedFilters.map((savedFilter, index) => (
-              <S.SavedFilter key={savedFilter.id}>
-                <S.SavedFilterName>{savedFilter.name}</S.SavedFilterName>
+            {filters.map((filter, index) => (
+              <S.SavedFilter
+                key={filter.name}
+                selected={selectedFilter === index}
+                onClick={() => setSelectedFilter(index)}
+              >
+                <S.SavedFilterName>{filter.name}</S.SavedFilterName>
                 <S.DeleteSavedFilter onClick={() => deleteFilter(index)}>
                   <i className="fas fa-times" />
                 </S.DeleteSavedFilter>
@@ -89,7 +84,7 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({ toggleIsOpen }) => {
             >
               Cancel
             </Button>
-            <Button buttonSize="M" buttonType="primary" type="submit">
+            <Button buttonSize="M" buttonType="primary" onClick={activeFilter}>
               Add filter
             </Button>
           </S.FilterButtonWrapper>
@@ -137,7 +132,7 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({ toggleIsOpen }) => {
               <Button
                 buttonSize="M"
                 buttonType="secondary"
-                onClick={() => setAddFilter(!addFilter)}
+                onClick={() => setAddNewFilter(!addNewFilter)}
               >
                 Cancel
               </Button>

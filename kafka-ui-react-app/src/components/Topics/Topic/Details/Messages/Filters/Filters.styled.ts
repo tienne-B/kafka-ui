@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+interface SavedFilterProps {
+  selected: boolean;
+}
 export const FiltersWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -101,6 +104,7 @@ export const MessageFilterModal = styled.div`
   border: 1px solid ${({ theme }) => theme.breadcrumb};
   box-shadow: ${({ theme }) => theme.modal.shadow};
   padding: 16px;
+  z-index: 1;
 `;
 
 export const FilterTitle = styled.h3`
@@ -165,18 +169,21 @@ export const DeleteSavedFilter = styled.div`
   cursor: pointer;
 `;
 
-export const SavedFilter = styled.div`
+export const SavedFilter = styled.div<SavedFilterProps>`
   display: flex;
   justify-content: space-between;
   padding-right: 5px;
   height: 32px;
   align-items: center;
+  cursor: pointer;
   &:hover ${DeleteSavedFilter} {
     display: block;
   }
   &:hover {
     background: ${({ theme }) => theme.layout.stuffColor};
   }
+  background: ${(props) =>
+    props.selected ? props.theme.layout.stuffColor : props.theme.panelColor};
 `;
 
 export const CheckboxWrapper = styled.div`
