@@ -166,7 +166,6 @@ const theme = {
     },
     overlay: Colors.transparency[10],
     shadow: Colors.transparency[20],
-    filterIcon: Colors.brand[50],
   },
   table: {
     th: {
@@ -398,9 +397,13 @@ const theme = {
       circleBig: Colors.red[10],
       circleSmall: Colors.red[50],
     },
+    newFilterIcon: Colors.brand[50],
   },
   viewer: {
     wrapper: Colors.neutral[3],
+  },
+  savedFilterDivider: {
+    color: Colors.neutral[15],
   },
 };
 

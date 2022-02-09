@@ -115,7 +115,7 @@ export const FilterTitle = styled.h3`
 `;
 
 export const NewFilterIcon = styled.div`
-  color: ${({ theme }) => theme.modal.filterIcon};
+  color: ${({ theme }) => theme.icons.newFilterIcon};
   padding-right: 6px;
   height: 12px;
   cursor: pointer;
@@ -153,7 +153,7 @@ export const FilterButtonWrapper = styled.div`
 export const AddFiltersIcon = styled.div`
   color: ${({ theme }) => theme.metrics.filters.color.icon};
   padding-right: 6px;
-  height: 12px;
+  height: 20px;
   cursor: pointer;
 `;
 
@@ -161,6 +161,8 @@ export const AddedFiltersWrapper = styled.div`
   padding: 5px 0;
   display: flex;
   gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
 `;
 
 export const DeleteSavedFilter = styled.div`
@@ -194,9 +196,24 @@ export const CheckboxWrapper = styled.div`
 
 export const AddedFilter = styled.div`
   border-radius: 4px;
-  width: 115px;
+  min-width: 115px;
   height: 24px;
   background: ${({ theme }) => theme.layout.stuffColor};
   font-size: 14px;
   line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: ${({ theme }) => theme.input.label.color};
+  padding: 10px 2px;
+`;
+
+export const DeleteSavedFilterIcon = styled.div`
+  color: ${({ theme }) => theme.icons.closeIcon};
+  border-left: 1px solid ${({ theme }) => theme.savedFilterDivider.color};
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  height: 24px;
+  cursor: pointer;
 `;

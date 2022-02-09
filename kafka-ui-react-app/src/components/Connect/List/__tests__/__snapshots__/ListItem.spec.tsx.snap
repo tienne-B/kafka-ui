@@ -175,6 +175,7 @@ exports[`Connectors ListItem matches snapshot 1`] = `
         },
         "messageToggleIconClosed": "#ABB5BA",
         "messageToggleIconOpened": "#171A1C",
+        "newFilterIcon": "#4F4FFF",
         "verticalElipsisIcon": "#73848C",
         "warningIcon": "#FFDD57",
       },
@@ -252,7 +253,6 @@ exports[`Connectors ListItem matches snapshot 1`] = `
           "bottom": "#F1F2F3",
           "top": "#F1F2F3",
         },
-        "filterIcon": "#4F4FFF",
         "overlay": "rgba(10, 10, 10, 0.1)",
         "shadow": "rgba(0, 0, 0, 0.1)",
       },
@@ -289,6 +289,9 @@ exports[`Connectors ListItem matches snapshot 1`] = `
           "hover": "#171A1C",
           "normal": "#73848C",
         },
+      },
+      "savedFilterDivider": Object {
+        "color": "#D5DADD",
       },
       "schema": Object {
         "backgroundColor": Object {

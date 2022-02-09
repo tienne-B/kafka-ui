@@ -9,6 +9,7 @@ import { Button } from 'components/common/Button/Button';
 import yup from 'lib/yupExtended';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { MessageFilters } from 'components/Topics/Topic/Details/Messages/Filters/Filters';
+import { useParams } from 'react-router-dom';
 
 const validationSchema = yup.object().shape({
   name: yup.string().required(),
@@ -20,6 +21,8 @@ interface AddFilterModalProps {
   filters: MessageFilters[];
   addFilter(values: MessageFilters): void;
   deleteFilter(index: number): void;
+  activeFilterHandler(activeFilter: MessageFilters): void;
+  topicName: string;
 }
 
 const AddFilterModal: React.FC<AddFilterModalProps> = ({
@@ -27,13 +30,16 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({
   filters,
   addFilter,
   deleteFilter,
+  activeFilterHandler,
+  topicName,
 }) => {
   const [addNewFilter, setAddNewFilter] = React.useState(false);
   const [toggleSaveFilter, setToggleSaveFilter] = React.useState(false);
+
   const [selectedFilter, setSelectedFilter] = React.useState(-1);
   const activeFilter = () => {
     if (selectedFilter > -1) {
-      localStorage.setItem('activeFilter', selectedFilter.toString());
+      activeFilterHandler(filters[selectedFilter]);
       toggleIsOpen();
     }
   };
@@ -48,11 +54,16 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({
   } = methods;
   const onSubmit = React.useCallback(
     async (values: MessageFilters) => {
-      addFilter(values);
+      if (toggleSaveFilter) {
+        activeFilterHandler(values);
+      } else {
+        addFilter(values);
+      }
       setAddNewFilter(!addNewFilter);
     },
-    [addFilter, filters, addNewFilter]
+    [addFilter, filters, addNewFilter, toggleSaveFilter]
   );
+  const { clusterName } = useParams<{ clusterName: string }>();
   return (
     <S.MessageFilterModal>
       <S.FilterTitle>Add filter</S.FilterTitle>
@@ -63,18 +74,22 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({
           </S.NewFilterIcon>
           <S.CreatedFilter>Created filters</S.CreatedFilter>
           <S.SavedFiltersContainer>
-            {filters.map((filter, index) => (
-              <S.SavedFilter
-                key={filter.name}
-                selected={selectedFilter === index}
-                onClick={() => setSelectedFilter(index)}
-              >
-                <S.SavedFilterName>{filter.name}</S.SavedFilterName>
-                <S.DeleteSavedFilter onClick={() => deleteFilter(index)}>
-                  <i className="fas fa-times" />
-                </S.DeleteSavedFilter>
-              </S.SavedFilter>
-            ))}
+            {filters.length === 0 ? (
+              <p>no saved filter(s)</p>
+            ) : (
+              filters.map((filter, index) => (
+                <S.SavedFilter
+                  key={Math.random()}
+                  selected={selectedFilter === index}
+                  onClick={() => setSelectedFilter(index)}
+                >
+                  <S.SavedFilterName>{filter.name}</S.SavedFilterName>
+                  <S.DeleteSavedFilter onClick={() => deleteFilter(index)}>
+                    <i className="fas fa-times" />
+                  </S.DeleteSavedFilter>
+                </S.SavedFilter>
+              ))
+            )}
           </S.SavedFiltersContainer>
           <S.FilterButtonWrapper>
             <Button

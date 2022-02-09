@@ -330,15 +330,6 @@ exports[`Filters component matches the snapshot 1`] = `
   margin-right: 7px;
 }
 
-.c14 {
-  height: 16px !important;
-  display: inline-block;
-}
-
-.c14:hover {
-  cursor: pointer;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -426,7 +417,7 @@ exports[`Filters component matches the snapshot 1`] = `
   outline: none;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -444,7 +435,7 @@ exports[`Filters component matches the snapshot 1`] = `
   padding-bottom: 16px;
 }
 
-.c17 {
+.c16 {
   color: #73848C;
   font-size: 12px;
   display: -webkit-box;
@@ -453,7 +444,7 @@ exports[`Filters component matches the snapshot 1`] = `
   display: flex;
 }
 
-.c18 {
+.c17 {
   color: #171A1C;
   padding-right: 6px;
   height: 12px;
@@ -466,10 +457,10 @@ exports[`Filters component matches the snapshot 1`] = `
   font-family: Inter;
 }
 
-.c15 {
+.c14 {
   color: #171A1C;
   padding-right: 6px;
-  height: 12px;
+  height: 20px;
   cursor: pointer;
 }
 
@@ -480,6 +471,14 @@ exports[`Filters component matches the snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 <body>
@@ -626,33 +625,26 @@ exports[`Filters component matches the snapshot 1`] = `
       <div
         class="c13"
       >
-        <span
-          aria-hidden="true"
+        <div
           class="c14"
-          role="button"
-          tabindex="0"
         >
-          <div
-            class="c15"
-          >
-            <i
-              class="fas fa-plus fa-sm"
-            />
-          </div>
-        </span>
+          <i
+            class="fas fa-plus fa-sm"
+          />
+        </div>
       </div>
       <div
-        class="c16"
+        class="c15"
       >
         <p
           style="font-size: 14px;"
         />
         <div
-          class="c17"
+          class="c16"
           title="Elapsed Time"
         >
           <div
-            class="c18"
+            class="c17"
           >
             <i
               class="far fa-clock"
@@ -664,11 +656,11 @@ exports[`Filters component matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c16"
           title="Bytes Consumed"
         >
           <div
-            class="c18"
+            class="c17"
           >
             <i
               class="fas fa-arrow-down"
@@ -679,11 +671,11 @@ exports[`Filters component matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c16"
           title="Messages Consumed"
         >
           <div
-            class="c18"
+            class="c17"
           >
             <i
               class="far fa-file-alt"
@@ -1030,15 +1022,6 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   margin-right: 7px;
 }
 
-.c14 {
-  height: 16px !important;
-  display: inline-block;
-}
-
-.c14:hover {
-  cursor: pointer;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1126,7 +1109,7 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   outline: none;
 }
 
-.c16 {
+.c15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1144,7 +1127,7 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   padding-bottom: 16px;
 }
 
-.c17 {
+.c16 {
   color: #73848C;
   font-size: 12px;
   display: -webkit-box;
@@ -1153,7 +1136,7 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   display: flex;
 }
 
-.c18 {
+.c17 {
   color: #171A1C;
   padding-right: 6px;
   height: 12px;
@@ -1166,10 +1149,10 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   font-family: Inter;
 }
 
-.c15 {
+.c14 {
   color: #171A1C;
   padding-right: 6px;
-  height: 12px;
+  height: 20px;
   cursor: pointer;
 }
 
@@ -1180,6 +1163,14 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 <div>
@@ -1325,33 +1316,26 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
       <div
         class="c13"
       >
-        <span
-          aria-hidden="true"
+        <div
           class="c14"
-          role="button"
-          tabindex="0"
         >
-          <div
-            class="c15"
-          >
-            <i
-              class="fas fa-plus fa-sm"
-            />
-          </div>
-        </span>
+          <i
+            class="fas fa-plus fa-sm"
+          />
+        </div>
       </div>
       <div
-        class="c16"
+        class="c15"
       >
         <p
           style="font-size: 14px;"
         />
         <div
-          class="c17"
+          class="c16"
           title="Elapsed Time"
         >
           <div
-            class="c18"
+            class="c17"
           >
             <i
               class="far fa-clock"
@@ -1363,11 +1347,11 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c16"
           title="Bytes Consumed"
         >
           <div
-            class="c18"
+            class="c17"
           >
             <i
               class="fas fa-arrow-down"
@@ -1378,11 +1362,11 @@ exports[`Filters component when fetching matches the snapshot 1`] = `
           </span>
         </div>
         <div
-          class="c17"
+          class="c16"
           title="Messages Consumed"
         >
           <div
-            class="c18"
+            class="c17"
           >
             <i
               class="far fa-file-alt"

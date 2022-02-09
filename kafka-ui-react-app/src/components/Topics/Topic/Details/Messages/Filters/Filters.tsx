@@ -21,7 +21,6 @@ import { BASE_PARAMS } from 'lib/constants';
 import Input from 'components/common/Input/Input';
 import Select from 'components/common/Select/Select';
 import { Button } from 'components/common/Button/Button';
-import IconButtonWrapper from 'components/common/Icons/IconButtonWrapper';
 import AddFilterModal from 'components/Topics/Topic/Details/Messages/Filters/AddFilterModal';
 
 import * as S from './Filters.styled';
@@ -192,26 +191,32 @@ const Filters: React.FC<FiltersProps> = ({
     source.current.close();
   };
 
-  const [savedFilters, setSavedFilters] = React.useState([
-    { name: 'Saved filter 1', code: 'code' },
-    { name: 'Saved filter 2', code: 'code' },
-    { name: 'Saved filter 3', code: 'code' },
-    { name: 'Saved filter 4', code: 'code' },
-    { name: 'Saved filter 5', code: 'code' },
-  ]);
+  const [savedFilters, setSavedFilters] = React.useState<MessageFilters[]>(
+    JSON.parse(localStorage.getItem('savedFilters') ?? '[]')
+  );
+  const [activeFilter, setActiveFilter] = React.useState<
+    MessageFilters | boolean
+  >(JSON.parse(localStorage.getItem('activeFilter') ?? 'false'));
   const addFilter = (newFilter: MessageFilters) => {
     const filters = [...savedFilters];
-    filters.push({ name: newFilter.name, code: newFilter.code });
+    filters.push(newFilter);
     setSavedFilters(filters);
+    localStorage.setItem('savedFilters', JSON.stringify(filters));
   };
   const deleteFilter = (index: number) => {
     const filters = [...savedFilters];
-    if (localStorage.getItem('activeFilter') === index.toString())
-      localStorage.removeItem('activeFilter');
+    if (activeFilter) localStorage.removeItem('activeFilter');
     filters.splice(index, 1);
     setSavedFilters(filters);
   };
-  const activeFilter = localStorage.getItem('activeFilter');
+  const deleteSavedFilter = () => {
+    setActiveFilter(false);
+    localStorage.removeItem('activeFilter');
+  };
+  const activeFilterHandler = (newActiveFilter: MessageFilters) => {
+    localStorage.setItem('activeFilter', JSON.stringify(newActiveFilter));
+    setActiveFilter(newActiveFilter);
+  };
   // eslint-disable-next-line consistent-return
   React.useEffect(() => {
     if (location.search.length !== 0) {
@@ -354,14 +359,15 @@ const Filters: React.FC<FiltersProps> = ({
         />
       </div>
       <S.AddedFiltersWrapper>
-        <IconButtonWrapper onClick={toggleIsOpen} aria-hidden>
-          <S.AddFiltersIcon>
-            <i className="fas fa-plus fa-sm" />
-          </S.AddFiltersIcon>
-        </IconButtonWrapper>
-        {activeFilter !== null && (
+        <S.AddFiltersIcon onClick={toggleIsOpen}>
+          <i className="fas fa-plus fa-sm" />
+        </S.AddFiltersIcon>
+        {typeof activeFilter === 'object' && (
           <S.AddedFilter>
-            {savedFilters[Number(activeFilter)].name}
+            {activeFilter.name}
+            <S.DeleteSavedFilterIcon onClick={deleteSavedFilter}>
+              <i className="fas fa-times" />
+            </S.DeleteSavedFilterIcon>
           </S.AddedFilter>
         )}
       </S.AddedFiltersWrapper>
@@ -371,6 +377,8 @@ const Filters: React.FC<FiltersProps> = ({
           filters={savedFilters}
           addFilter={addFilter}
           deleteFilter={deleteFilter}
+          activeFilterHandler={activeFilterHandler}
+          topicName={topicName}
         />
       )}
       <S.FiltersMetrics>
