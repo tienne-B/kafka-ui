@@ -61,7 +61,6 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({
     },
     [addFilter, filters, addNewFilter, toggleSaveFilter]
   );
-  const { clusterName } = useParams<{ clusterName: string }>();
   return (
     <S.MessageFilterModal>
       <S.FilterTitle>Add filter</S.FilterTitle>
