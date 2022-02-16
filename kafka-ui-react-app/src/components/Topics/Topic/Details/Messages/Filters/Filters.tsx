@@ -8,6 +8,7 @@ import {
   TopicMessageConsuming,
   TopicMessageEvent,
   TopicMessageEventTypeEnum,
+  MessageFilterType,
 } from 'generated-sources';
 import * as React from 'react';
 import { omitBy } from 'lodash';
@@ -103,11 +104,25 @@ const Filters: React.FC<FiltersProps> = ({
   const [timestamp, setTimestamp] = React.useState<Date | null>(
     getTimestampFromSeekToParam(searchParams)
   );
-  const [query, setQuery] = React.useState<string>(searchParams.get('q') || '');
+  const [queryType, setQueryType] = React.useState<MessageFilterType>(
+    MessageFilterType.STRING_CONTAINS
+  );
+  const [query, setQuery] = React.useState<string>(
+    queryType === MessageFilterType.STRING_CONTAINS
+      ? searchParams.get('q') || ''
+      : ''
+  );
   const [seekDirection, setSeekDirection] = React.useState<SeekDirection>(
     (searchParams.get('seekDirection') as SeekDirection) ||
       SeekDirection.FORWARD
   );
+
+  const [savedFilters, setSavedFilters] = React.useState<MessageFilters[]>(
+    JSON.parse(localStorage.getItem('savedFilters') ?? '[]')
+  );
+  const [activeFilter, setActiveFilter] = React.useState<
+    MessageFilters | boolean
+  >(JSON.parse(localStorage.getItem('activeFilter') ?? 'false'));
 
   const isSeekTypeControlVisible = React.useMemo(
     () => selectedPartitions.length > 0,
@@ -142,8 +157,12 @@ const Filters: React.FC<FiltersProps> = ({
       attempt,
       limit: PER_PAGE,
       seekDirection,
+      filterQueryType: queryType,
     };
-
+    if (typeof activeFilter === 'object') {
+      props.q = activeFilter.code;
+      setQueryType(MessageFilterType.GROOVY_SCRIPT);
+    }
     if (isSeekTypeControlVisible) {
       props.seekType = currentSeekType;
       props.seekTo = selectedPartitions.map(({ value }) => {
@@ -191,12 +210,6 @@ const Filters: React.FC<FiltersProps> = ({
     source.current.close();
   };
 
-  const [savedFilters, setSavedFilters] = React.useState<MessageFilters[]>(
-    JSON.parse(localStorage.getItem('savedFilters') ?? '[]')
-  );
-  const [activeFilter, setActiveFilter] = React.useState<
-    MessageFilters | boolean
-  >(JSON.parse(localStorage.getItem('activeFilter') ?? 'false'));
   const addFilter = (newFilter: MessageFilters) => {
     const filters = [...savedFilters];
     filters.push(newFilter);
@@ -212,10 +225,13 @@ const Filters: React.FC<FiltersProps> = ({
   const deleteSavedFilter = () => {
     setActiveFilter(false);
     localStorage.removeItem('activeFilter');
+    setQueryType(MessageFilterType.STRING_CONTAINS);
   };
   const activeFilterHandler = (newActiveFilter: MessageFilters) => {
     localStorage.setItem('activeFilter', JSON.stringify(newActiveFilter));
     setActiveFilter(newActiveFilter);
+    setQuery(newActiveFilter.code);
+    setQueryType(MessageFilterType.GROOVY_SCRIPT);
   };
   // eslint-disable-next-line consistent-return
   React.useEffect(() => {
@@ -269,7 +285,6 @@ const Filters: React.FC<FiltersProps> = ({
   React.useEffect(() => {
     handleFiltersSubmit();
   }, [seekDirection]);
-
   return (
     <S.FiltersWrapper>
       <div>
@@ -378,7 +393,6 @@ const Filters: React.FC<FiltersProps> = ({
           addFilter={addFilter}
           deleteFilter={deleteFilter}
           activeFilterHandler={activeFilterHandler}
-          topicName={topicName}
         />
       )}
       <S.FiltersMetrics>

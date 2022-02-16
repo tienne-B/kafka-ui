@@ -22,7 +22,6 @@ interface AddFilterModalProps {
   addFilter(values: MessageFilters): void;
   deleteFilter(index: number): void;
   activeFilterHandler(activeFilter: MessageFilters): void;
-  topicName: string;
 }
 
 const AddFilterModal: React.FC<AddFilterModalProps> = ({
@@ -31,7 +30,6 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({
   addFilter,
   deleteFilter,
   activeFilterHandler,
-  topicName,
 }) => {
   const [addNewFilter, setAddNewFilter] = React.useState(false);
   const [toggleSaveFilter, setToggleSaveFilter] = React.useState(false);
@@ -54,7 +52,7 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({
   } = methods;
   const onSubmit = React.useCallback(
     async (values: MessageFilters) => {
-      if (toggleSaveFilter) {
+      if (!toggleSaveFilter) {
         activeFilterHandler(values);
       } else {
         addFilter(values);
@@ -100,7 +98,7 @@ const AddFilterModal: React.FC<AddFilterModalProps> = ({
               Cancel
             </Button>
             <Button buttonSize="M" buttonType="primary" onClick={activeFilter}>
-              Add filter
+              Select filter
             </Button>
           </S.FilterButtonWrapper>
         </>
