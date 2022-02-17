@@ -60,7 +60,6 @@ const SeekTypeOptions = [
 const SeekDirectionOptions = [
   { value: SeekDirection.FORWARD, label: 'Oldest First' },
   { value: SeekDirection.BACKWARD, label: 'Newest First' },
-  { value: 'LIVE', label: 'Live Mode' },
 ];
 
 const Filters: React.FC<FiltersProps> = ({
@@ -154,13 +153,13 @@ const Filters: React.FC<FiltersProps> = ({
 
     const props: Query = {
       q: query,
+      filterQueryType: queryType,
       attempt,
       limit: PER_PAGE,
       seekDirection,
-      filterQueryType: queryType,
     };
     if (typeof activeFilter === 'object') {
-      props.q = activeFilter.code;
+      props.q = `valueAsText.contains('${activeFilter.code}')`;
       setQueryType(MessageFilterType.GROOVY_SCRIPT);
     }
     if (isSeekTypeControlVisible) {
@@ -230,7 +229,6 @@ const Filters: React.FC<FiltersProps> = ({
   const activeFilterHandler = (newActiveFilter: MessageFilters) => {
     localStorage.setItem('activeFilter', JSON.stringify(newActiveFilter));
     setActiveFilter(newActiveFilter);
-    setQuery(newActiveFilter.code);
     setQueryType(MessageFilterType.GROOVY_SCRIPT);
   };
   // eslint-disable-next-line consistent-return
