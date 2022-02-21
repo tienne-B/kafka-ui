@@ -22,7 +22,9 @@ import { BASE_PARAMS } from 'lib/constants';
 import Input from 'components/common/Input/Input';
 import Select from 'components/common/Select/Select';
 import { Button } from 'components/common/Button/Button';
-import AddFilterModal from 'components/Topics/Topic/Details/Messages/Filters/AddFilterModal';
+import FilterModal, {
+  FilterEdit,
+} from 'components/Topics/Topic/Details/Messages/Filters/FilterModal';
 
 import * as S from './Filters.styled';
 import {
@@ -231,6 +233,11 @@ const Filters: React.FC<FiltersProps> = ({
     setActiveFilter(newActiveFilter);
     setQueryType(MessageFilterType.GROOVY_SCRIPT);
   };
+  const editSavedFilter = (filter: FilterEdit) => {
+    const filters = [...savedFilters];
+    filters[filter.index] = filter.filter;
+    setSavedFilters(filters);
+  };
   // eslint-disable-next-line consistent-return
   React.useEffect(() => {
     if (location.search.length !== 0) {
@@ -385,12 +392,13 @@ const Filters: React.FC<FiltersProps> = ({
         )}
       </S.AddedFiltersWrapper>
       {isOpen && (
-        <AddFilterModal
+        <FilterModal
           toggleIsOpen={toggleIsOpen}
           filters={savedFilters}
           addFilter={addFilter}
           deleteFilter={deleteFilter}
           activeFilterHandler={activeFilterHandler}
+          editSavedFilter={editSavedFilter}
         />
       )}
       <S.FiltersMetrics>

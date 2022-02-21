@@ -167,8 +167,20 @@ export const AddedFiltersWrapper = styled.div`
 
 export const DeleteSavedFilter = styled.div`
   color: ${({ theme }) => theme.breadcrumb};
-  display: none;
   cursor: pointer;
+`;
+
+export const FilterEdit = styled.div`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+`;
+
+export const FilterOptions = styled.div`
+  display: none;
+  width: 50px;
+  justify-content: space-between;
+  color: ${({ theme }) => theme.editFilterText.color};
 `;
 
 export const SavedFilter = styled.div<SavedFilterProps>`
@@ -178,8 +190,8 @@ export const SavedFilter = styled.div<SavedFilterProps>`
   height: 32px;
   align-items: center;
   cursor: pointer;
-  &:hover ${DeleteSavedFilter} {
-    display: block;
+  &:hover ${FilterOptions} {
+    display: flex;
   }
   &:hover {
     background: ${({ theme }) => theme.layout.stuffColor};

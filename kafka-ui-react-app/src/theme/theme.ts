@@ -405,6 +405,9 @@ const theme = {
   savedFilterDivider: {
     color: Colors.neutral[15],
   },
+  editFilterText: {
+    color: Colors.brand[50],
+  },
 };
 
 export type ThemeType = typeof theme;
