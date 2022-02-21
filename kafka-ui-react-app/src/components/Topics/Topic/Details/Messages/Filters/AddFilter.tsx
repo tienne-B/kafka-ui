@@ -21,8 +21,8 @@ interface FilterModalProps {
   filters: MessageFilters[];
   addFilter(values: MessageFilters): void;
   deleteFilter(index: number): void;
-  activeFilterHandler(activeFilter: MessageFilters): void;
-  openEditModal(): void;
+  activeFilterHandler(activeFilter: MessageFilters, index: number): void;
+  toggleEditModal(): void;
   editFilter(value: FilterEdit): void;
 }
 
@@ -32,15 +32,23 @@ const AddFilter: React.FC<FilterModalProps> = ({
   addFilter,
   deleteFilter,
   activeFilterHandler,
-  openEditModal,
+  toggleEditModal,
   editFilter,
 }) => {
   const [addNewFilter, setAddNewFilter] = React.useState(false);
   const [toggleSaveFilter, setToggleSaveFilter] = React.useState(false);
   const [selectedFilter, setSelectedFilter] = React.useState(-1);
+  const [toggleDeletionModal, setToggleDeletionModal] =
+    React.useState<boolean>(false);
+  const [deleteIndex, setDeleteIndex] = React.useState<number>(-1);
+
+  const deleteFilterHandler = (index: number) => {
+    setToggleDeletionModal(!toggleDeletionModal);
+    setDeleteIndex(index);
+  };
   const activeFilter = () => {
     if (selectedFilter > -1) {
-      activeFilterHandler(filters[selectedFilter]);
+      activeFilterHandler(filters[selectedFilter], selectedFilter);
       toggleIsOpen();
     }
   };
@@ -52,15 +60,17 @@ const AddFilter: React.FC<FilterModalProps> = ({
     handleSubmit,
     control,
     formState: { isDirty, isSubmitting, isValid, errors },
+    reset,
   } = methods;
   const onSubmit = React.useCallback(
     async (values: MessageFilters) => {
       if (!toggleSaveFilter) {
-        activeFilterHandler(values);
+        activeFilterHandler(values, -1);
       } else {
         addFilter(values);
       }
       setAddNewFilter(!addNewFilter);
+      reset({ name: '', code: '' });
     },
     [addNewFilter, toggleSaveFilter]
   );
@@ -71,6 +81,39 @@ const AddFilter: React.FC<FilterModalProps> = ({
         <i className="fas fa-plus fa-sm" /> New filter
       </S.NewFilterIcon>
       <S.CreatedFilter>Created filters</S.CreatedFilter>
+      {toggleDeletionModal && (
+        <S.ConfirmDeletionModal>
+          <S.ConfirmDeletionModalHeader>
+            <S.ConfirmDeletionTitle>Confirm deletion</S.ConfirmDeletionTitle>
+            <S.CloseDeletionModalIcon
+              onClick={() => setToggleDeletionModal(!toggleDeletionModal)}
+            >
+              <i className="fas fa-times-circle" />
+            </S.CloseDeletionModalIcon>
+          </S.ConfirmDeletionModalHeader>
+          <S.ConfirmDeletionText>
+            Are you sure want to remove {filters[deleteIndex].name}?
+          </S.ConfirmDeletionText>
+          <S.FilterButtonWrapper>
+            <Button
+              buttonSize="M"
+              buttonType="secondary"
+              type="button"
+              onClick={() => setToggleDeletionModal(!toggleDeletionModal)}
+            >
+              Cancel
+            </Button>
+            <Button
+              buttonSize="M"
+              buttonType="primary"
+              type="button"
+              onClick={() => deleteFilter(0)}
+            >
+              Delete
+            </Button>
+          </S.FilterButtonWrapper>
+        </S.ConfirmDeletionModal>
+      )}
       <S.SavedFiltersContainer>
         {filters.length === 0 ? (
           <p>no saved filter(s)</p>
@@ -85,13 +128,13 @@ const AddFilter: React.FC<FilterModalProps> = ({
               <S.FilterOptions>
                 <S.FilterEdit
                   onClick={() => {
-                    openEditModal();
+                    toggleEditModal();
                     editFilter({ index, filter });
                   }}
                 >
                   Edit
                 </S.FilterEdit>
-                <S.DeleteSavedFilter onClick={() => deleteFilter(index)}>
+                <S.DeleteSavedFilter onClick={() => deleteFilterHandler(index)}>
                   <i className="fas fa-times" />
                 </S.DeleteSavedFilter>
               </S.FilterOptions>
@@ -100,10 +143,22 @@ const AddFilter: React.FC<FilterModalProps> = ({
         )}
       </S.SavedFiltersContainer>
       <S.FilterButtonWrapper>
-        <Button buttonSize="M" buttonType="secondary" onClick={toggleIsOpen}>
+        <Button
+          buttonSize="M"
+          buttonType="secondary"
+          type="button"
+          onClick={toggleIsOpen}
+          disabled={toggleDeletionModal}
+        >
           Cancel
         </Button>
-        <Button buttonSize="M" buttonType="primary" onClick={activeFilter}>
+        <Button
+          buttonSize="M"
+          buttonType="primary"
+          type="button"
+          onClick={activeFilter}
+          disabled={toggleDeletionModal}
+        >
           Select filter
         </Button>
       </S.FilterButtonWrapper>
@@ -153,6 +208,7 @@ const AddFilter: React.FC<FilterModalProps> = ({
             <Button
               buttonSize="M"
               buttonType="secondary"
+              type="button"
               onClick={() => setAddNewFilter(!addNewFilter)}
             >
               Cancel

@@ -229,3 +229,41 @@ export const DeleteSavedFilterIcon = styled.div`
   height: 24px;
   cursor: pointer;
 `;
+
+export const ConfirmDeletionModal = styled.div`
+  height: auto;
+  width: 348px;
+  border-radius: 8px;
+  background: ${({ theme }) => theme.modal.backgroundColor};
+  position: absolute;
+  left: 20%;
+  border: 1px solid ${({ theme }) => theme.breadcrumb};
+  box-shadow: ${({ theme }) => theme.modal.shadow};
+  padding: 16px;
+  z-index: 2;
+`;
+
+export const ConfirmDeletionModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+`;
+
+export const ConfirmDeletionTitle = styled.h3`
+  font-size: 20px;
+  line-height: 32px;
+`;
+
+export const CloseDeletionModalIcon = styled.div`
+  color: ${({ theme }) => theme.icons.closeModalIcon};
+  height: 20px;
+  cursor: pointer;
+`;
+
+export const ConfirmDeletionText = styled.h3`
+  color: ${({ theme }) => theme.modal.deletionTextColor};
+  font-size: 14px;
+  line-height: 20px;
+  padding: 16px 0;
+`;

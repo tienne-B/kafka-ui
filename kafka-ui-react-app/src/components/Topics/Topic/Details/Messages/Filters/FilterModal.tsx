@@ -9,7 +9,7 @@ interface FilterModalProps {
   filters: MessageFilters[];
   addFilter(values: MessageFilters): void;
   deleteFilter(index: number): void;
-  activeFilterHandler(activeFilter: MessageFilters): void;
+  activeFilterHandler(activeFilter: MessageFilters, index: number): void;
   editSavedFilter(filter: FilterEdit): void;
 }
 
@@ -27,7 +27,7 @@ const FilterModal: React.FC<FilterModalProps> = ({
   editSavedFilter,
 }) => {
   const [addFilterModal, setAddFilterModal] = React.useState<boolean>(true);
-  const openEditModal = () => {
+  const toggleEditModal = () => {
     setAddFilterModal(!addFilterModal);
   };
   const [editFilter, setEditFilter] = React.useState<FilterEdit>({
@@ -47,13 +47,13 @@ const FilterModal: React.FC<FilterModalProps> = ({
           addFilter={addFilter}
           deleteFilter={deleteFilter}
           activeFilterHandler={activeFilterHandler}
-          openEditModal={openEditModal}
+          toggleEditModal={toggleEditModal}
           editFilter={editFilterHandler}
         />
       ) : (
         <EditFilter
           editFilter={editFilter}
-          openEditModal={openEditModal}
+          toggleEditModal={toggleEditModal}
           editSavedFilter={editSavedFilter}
         />
       )}

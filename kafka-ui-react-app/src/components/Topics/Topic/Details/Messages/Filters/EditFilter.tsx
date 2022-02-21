@@ -18,13 +18,13 @@ const validationSchema = yup.object().shape({
 
 interface EditFilterProps {
   editFilter: FilterEdit;
-  openEditModal(): void;
+  toggleEditModal(): void;
   editSavedFilter(filter: FilterEdit): void;
 }
 
 const EditFilter: React.FC<EditFilterProps> = ({
   editFilter,
-  openEditModal,
+  toggleEditModal,
   editSavedFilter,
 }) => {
   const methods = useForm<MessageFilters>({
@@ -39,7 +39,7 @@ const EditFilter: React.FC<EditFilterProps> = ({
   const onSubmit = React.useCallback(
     async (values: MessageFilters) => {
       editSavedFilter({ index: editFilter.index, filter: values });
-      openEditModal();
+      toggleEditModal();
     },
     [editSavedFilter]
   );
@@ -79,7 +79,8 @@ const EditFilter: React.FC<EditFilterProps> = ({
             <Button
               buttonSize="M"
               buttonType="secondary"
-              onClick={() => openEditModal()}
+              type="button"
+              onClick={() => toggleEditModal()}
             >
               Cancel
             </Button>

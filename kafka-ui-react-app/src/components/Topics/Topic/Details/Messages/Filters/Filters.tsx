@@ -53,6 +53,13 @@ export interface MessageFilters {
   name: string;
   code: string;
 }
+
+export interface ActiveMessageFilter {
+  index: number;
+  name: string;
+  code: string;
+}
+
 const PER_PAGE = 100;
 
 const SeekTypeOptions = [
@@ -122,7 +129,7 @@ const Filters: React.FC<FiltersProps> = ({
     JSON.parse(localStorage.getItem('savedFilters') ?? '[]')
   );
   const [activeFilter, setActiveFilter] = React.useState<
-    MessageFilters | boolean
+    ActiveMessageFilter | boolean
   >(JSON.parse(localStorage.getItem('activeFilter') ?? 'false'));
 
   const isSeekTypeControlVisible = React.useMemo(
@@ -223,19 +230,44 @@ const Filters: React.FC<FiltersProps> = ({
     filters.splice(index, 1);
     setSavedFilters(filters);
   };
+  // delete filters from local storage
   const deleteSavedFilter = () => {
     setActiveFilter(false);
     localStorage.removeItem('activeFilter');
     setQueryType(MessageFilterType.STRING_CONTAINS);
   };
-  const activeFilterHandler = (newActiveFilter: MessageFilters) => {
-    localStorage.setItem('activeFilter', JSON.stringify(newActiveFilter));
-    setActiveFilter(newActiveFilter);
+  const activeFilterHandler = (
+    newActiveFilter: MessageFilters,
+    index: number
+  ) => {
+    localStorage.setItem(
+      'activeFilter',
+      JSON.stringify({ index, ...newActiveFilter })
+    );
+    setActiveFilter({ index, ...newActiveFilter });
     setQueryType(MessageFilterType.GROOVY_SCRIPT);
   };
   const editSavedFilter = (filter: FilterEdit) => {
     const filters = [...savedFilters];
     filters[filter.index] = filter.filter;
+    if (
+      typeof activeFilter === 'object' &&
+      activeFilter.index === filter.index
+    ) {
+      setActiveFilter({
+        index: filter.index,
+        name: filter.filter.name,
+        code: filter.filter.code,
+      });
+      localStorage.setItem(
+        'activeFilter',
+        JSON.stringify({
+          index: filter.index,
+          name: filter.filter.name,
+          code: filter.filter.code,
+        })
+      );
+    }
     setSavedFilters(filters);
   };
   // eslint-disable-next-line consistent-return
