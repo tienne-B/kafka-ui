@@ -112,8 +112,18 @@ const Filters: React.FC<FiltersProps> = ({
   const [timestamp, setTimestamp] = React.useState<Date | null>(
     getTimestampFromSeekToParam(searchParams)
   );
+
+  const [savedFilters, setSavedFilters] = React.useState<MessageFilters[]>(
+    JSON.parse(localStorage.getItem('savedFilters') ?? '[]')
+  );
+  const [activeFilter, setActiveFilter] = React.useState<
+    ActiveMessageFilter | boolean
+  >(JSON.parse(localStorage.getItem('activeFilter') ?? 'false'));
+
   const [queryType, setQueryType] = React.useState<MessageFilterType>(
-    MessageFilterType.STRING_CONTAINS
+    activeFilter
+      ? MessageFilterType.GROOVY_SCRIPT
+      : MessageFilterType.STRING_CONTAINS
   );
   const [query, setQuery] = React.useState<string>(
     queryType === MessageFilterType.STRING_CONTAINS
@@ -124,13 +134,6 @@ const Filters: React.FC<FiltersProps> = ({
     (searchParams.get('seekDirection') as SeekDirection) ||
       SeekDirection.FORWARD
   );
-
-  const [savedFilters, setSavedFilters] = React.useState<MessageFilters[]>(
-    JSON.parse(localStorage.getItem('savedFilters') ?? '[]')
-  );
-  const [activeFilter, setActiveFilter] = React.useState<
-    ActiveMessageFilter | boolean
-  >(JSON.parse(localStorage.getItem('activeFilter') ?? 'false'));
 
   const isSeekTypeControlVisible = React.useMemo(
     () => selectedPartitions.length > 0,
@@ -226,12 +229,15 @@ const Filters: React.FC<FiltersProps> = ({
   };
   const deleteFilter = (index: number) => {
     const filters = [...savedFilters];
-    if (activeFilter) localStorage.removeItem('activeFilter');
+    if (typeof activeFilter === 'object' && activeFilter.index === index) {
+      localStorage.removeItem('activeFilter');
+      setActiveFilter(false);
+    }
     filters.splice(index, 1);
+    localStorage.setItem('savedFilters', JSON.stringify(filters));
     setSavedFilters(filters);
   };
-  // delete filters from local storage
-  const deleteSavedFilter = () => {
+  const deleteActiveFilter = () => {
     setActiveFilter(false);
     localStorage.removeItem('activeFilter');
     setQueryType(MessageFilterType.STRING_CONTAINS);
@@ -417,7 +423,7 @@ const Filters: React.FC<FiltersProps> = ({
         {typeof activeFilter === 'object' && (
           <S.AddedFilter>
             {activeFilter.name}
-            <S.DeleteSavedFilterIcon onClick={deleteSavedFilter}>
+            <S.DeleteSavedFilterIcon onClick={deleteActiveFilter}>
               <i className="fas fa-times" />
             </S.DeleteSavedFilterIcon>
           </S.AddedFilter>

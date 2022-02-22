@@ -107,7 +107,10 @@ const AddFilter: React.FC<FilterModalProps> = ({
               buttonSize="M"
               buttonType="primary"
               type="button"
-              onClick={() => deleteFilter(0)}
+              onClick={() => {
+                deleteFilter(deleteIndex);
+                setToggleDeletionModal(!toggleDeletionModal);
+              }}
             >
               Delete
             </Button>
