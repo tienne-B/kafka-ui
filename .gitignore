@@ -41,3 +41,4 @@ build/
 /docker/*.override.yaml
 
 /kafka-ui-react-app/package-lock.json
+/package-lock.json
