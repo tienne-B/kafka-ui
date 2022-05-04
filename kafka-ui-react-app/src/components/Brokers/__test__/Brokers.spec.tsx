@@ -67,5 +67,21 @@ describe('Brokers Component', () => {
       expect(onlineWidget).toBeInTheDocument();
       expect(onlineWidget).toHaveStyle({ color: '#E51A1A' });
     });
+    it('shows right count when offlinePartitionCount > 0', async () => {
+      const fetchStatsMock = fetchMock.getOnce(fetchStatsUrl, {
+        ...clusterStatsPayload,
+        inSyncReplicasCount: 798,
+        outOfSyncReplicasCount: 1,
+      });
+      renderComponent();
+      await waitFor(() => {
+        expect(fetchStatsMock.called()).toBeTruthy();
+      });
+      await waitFor(() => {
+        expect(fetchBrokersMock.called()).toBeTruthy();
+      });
+      const onlineWidget = screen.getByText('of 799');
+      expect(onlineWidget).toBeInTheDocument();
+    });
   });
 });
