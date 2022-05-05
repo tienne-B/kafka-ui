@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Brokers/__test__/Brokers.spec.tsx">
+    <testCase name="Brokers Component Brokers renders" duration="471"/>
+    <testCase name="Brokers Component Brokers shows warning when offlinePartitionCount &gt; 0" duration="143"/>
+    <testCase name="Brokers Component Brokers shows right count when offlinePartitionCount &gt; 0" duration="75"/>
+    <testCase name="Brokers Component Brokers shows right count when inSyncReplicasCount: undefined outOfSyncReplicasCount: 1" duration="48"/>
+    <testCase name="Brokers Component Brokers shows right count when inSyncReplicasCount: 47 outOfSyncReplicasCount: undefined" duration="97"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/__tests__/App.spec.tsx">
+    <testCase name="App initial state shows PageLoader until clusters are fulfilled" duration="402"/>
+    <testCase name="App initial state correctly renders header" duration="238"/>
+    <testCase name="App initial state handle burger click correctly" duration="209"/>
+    <testCase name="App with clusters list fetched shows Cluster list" duration="246"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/__test__/Details.spec.tsx">
+    <testCase name="Details when it has readonly flag does not render the Action button a Topic" duration="92"/>
+    <testCase name="Details when remove topic modal is open calls deleteTopic on confirm" duration="491"/>
+    <testCase name="Details when remove topic modal is open closes the modal when cancel button is clicked" duration="293"/>
+    <testCase name="Details when clear messages modal is open it calls clearTopicMessages on confirm" duration="221"/>
+    <testCase name="Details when clear messages modal is open closes the modal when cancel button is clicked" duration="227"/>
+    <testCase name="Details when edit settings is clicked redirects to the edit page" duration="109"/>
+    <testCase name="Details redirects to the correct route if topic is deleted" duration="76"/>
+    <testCase name="Details shows a confirmation popup on deleting topic messages" duration="133"/>
+    <testCase name="Details shows a confirmation popup on recreating topic" duration="220"/>
+    <testCase name="Details calling recreation function after click on Submit button" duration="286"/>
+    <testCase name="Details close popup confirmation window after click on Cancel button" duration="326"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/shared/Form/CustomParams/__test__/CustomParams.spec.tsx">
+    <testCase name="CustomParams renders with props" duration="291"/>
+    <testCase name="CustomParams has defaultValues when they are set" duration="211"/>
+    <testCase name="CustomParams works with user inputs correctly button click creates custom param fieldset" duration="158"/>
+    <testCase name="CustomParams works with user inputs correctly can select option" duration="427"/>
+    <testCase name="CustomParams works with user inputs correctly when selected option changes disabled options update correctly" duration="582"/>
+    <testCase name="CustomParams works with user inputs correctly multiple button clicks create multiple fieldsets" duration="282"/>
+    <testCase name="CustomParams works with user inputs correctly can&apos;t select already selected option" duration="511"/>
+    <testCase name="CustomParams works with user inputs correctly when fieldset with selected custom property type is deleted disabled options update correctly" duration="1168"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/Filters/__tests__/AddFilter.spec.tsx">
+    <testCase name="AddFilter component should test click on Saved Filters redirects to Saved components" duration="737"/>
+    <testCase name="AddFilter component should test click on return to custom filter redirects to Add filters" duration="454"/>
+    <testCase name="AddFilter component Add new filter adding new filter" duration="337"/>
+    <testCase name="AddFilter component Add new filter should check unSaved filter without name" duration="196"/>
+    <testCase name="AddFilter component Add new filter calls editFilter when edit button is clicked in saved filters" duration="128"/>
+    <testCase name="AddFilter component onSubmit with Filter being saved OnSubmit conditions with codeValue and nameValue in fields OnSubmit condition with checkbox off functionality" duration="377"/>
+    <testCase name="AddFilter component onSubmit with Filter being saved OnSubmit conditions with codeValue and nameValue in fields OnSubmit condition with checkbox on functionality" duration="391"/>
+    <testCase name="AddFilter component onSubmit with Filter being saved OnSubmit conditions with codeValue and nameValue in fields should check the state submit button when checkbox state changes so is name input value" duration="844"/>
+    <testCase name="AddFilter component onSubmit with Filter being saved should use sliced code as the filter name if filter name is empty" duration="437"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/KsqlDb/Query/QueryForm/__test__/QueryForm.spec.tsx">
+    <testCase name="QueryForm renders" duration="1243"/>
+    <testCase name="QueryForm renders error with empty input" duration="230"/>
+    <testCase name="QueryForm renders error with non-JSON streamProperties" duration="247"/>
+    <testCase name="QueryForm renders without error with correct JSON" duration="292"/>
+    <testCase name="QueryForm submits with correct inputs" duration="355"/>
+    <testCase name="QueryForm clear results is enabled when has results" duration="291"/>
+    <testCase name="QueryForm stop query query is enabled when is fetching" duration="210"/>
+    <testCase name="QueryForm submits form with ctrl+enter on KSQL editor" duration="395"/>
+    <testCase name="QueryForm submits form with ctrl+enter on streamProperties editor" duration="358"/>
+    <testCase name="QueryForm clears KSQL with Clear button" duration="270"/>
+    <testCase name="QueryForm clears streamProperties with Clear button" duration="273"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/Details/ResetOffsets/__test__/ResetOffsets.spec.tsx">
+    <testCase name="ResetOffsets renders progress bar for initial state" duration="87"/>
+    <testCase name="ResetOffsets with consumer group submit handles resetConsumerGroupOffsets calls resetConsumerGroupOffsets with EARLIEST" duration="654"/>
+    <testCase name="ResetOffsets with consumer group submit handles resetConsumerGroupOffsets calls resetConsumerGroupOffsets with LATEST" duration="508"/>
+    <testCase name="ResetOffsets with consumer group submit handles resetConsumerGroupOffsets calls resetConsumerGroupOffsets with OFFSET" duration="687"/>
+    <testCase name="ResetOffsets with consumer group submit handles resetConsumerGroupOffsets calls resetConsumerGroupOffsets with TIMESTAMP" duration="599"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/Details/__test__/SchemaVersion.spec.tsx">
+    <testCase name="SchemaVersion renders versions" duration="286"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/Filters/__tests__/AddEditFilterContainer.spec.tsx">
+    <testCase name="AddEditFilterContainer component default Component Parameters should check the default Button text" duration="242"/>
+    <testCase name="AddEditFilterContainer component default Component Parameters should check whether the submit Button is disabled when the form is pristine and disabled if dirty" duration="624"/>
+    <testCase name="AddEditFilterContainer component default Component Parameters should view the error message after typing and clearing the input" duration="435"/>
+    <testCase name="AddEditFilterContainer component Custom setup for the component should render the input with default data if they are passed" duration="99"/>
+    <testCase name="AddEditFilterContainer component Custom setup for the component should test whether the cancel callback is being called" duration="104"/>
+    <testCase name="AddEditFilterContainer component Custom setup for the component should test whether the submit Callback is being called" duration="324"/>
+    <testCase name="AddEditFilterContainer component Custom setup for the component should display the checkbox if the props is passed and initially check state" duration="74"/>
+    <testCase name="AddEditFilterContainer component Custom setup for the component should pass and render the correct button text" duration="98"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/Filters/__tests__/EditFilter.spec.tsx">
+    <testCase name="EditFilter component renders component" duration="352"/>
+    <testCase name="EditFilter component closes editFilter modal" duration="496"/>
+    <testCase name="EditFilter component save edited fields and close modal" duration="486"/>
+    <testCase name="EditFilter component checks input values to match" duration="131"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/Filters/__tests__/Filters.spec.tsx">
+    <testCase name="Filters component renders component" duration="231"/>
+    <testCase name="Filters component when fetching shows cancel button while fetching" duration="219"/>
+    <testCase name="Filters component when fetching is over shows submit button while fetching is over" duration="130"/>
+    <testCase name="Filters component Input elements search input" duration="299"/>
+    <testCase name="Filters component Input elements offset input" duration="383"/>
+    <testCase name="Filters component Input elements timestamp input" duration="1501"/>
+    <testCase name="Filters component Select elements seekType select" duration="423"/>
+    <testCase name="Filters component Select elements seekDirection select" duration="295"/>
+    <testCase name="Filters component when live mode is active stop loading" duration="169"/>
+    <testCase name="Filters component add new filter modal renders addFilter modal" duration="442"/>
+    <testCase name="Filters component when there is active smart filter shows saved smart filter" duration="1030"/>
+    <testCase name="Filters component when there is active smart filter delete the active smart Filter" duration="720"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/List/__tests__/List.spec.tsx">
+    <testCase name="List when it has readonly flag does not render the Add a Topic button" duration="79"/>
+    <testCase name="List when it does not have readonly flag renders the Add a Topic button" duration="126"/>
+    <testCase name="List when it does not have readonly flag calls setTopicsSearch on input" duration="142"/>
+    <testCase name="List when it does not have readonly flag show internal toggle state should be true if user has not used it yet" duration="51"/>
+    <testCase name="List when it does not have readonly flag show internal toggle state should match user preference" duration="178"/>
+    <testCase name="List when it does not have readonly flag should refetch topics on show internal toggle change" duration="130"/>
+    <testCase name="List when it does not have readonly flag should reset page query param on show internal toggle change" duration="122"/>
+    <testCase name="List when it does not have readonly flag should set cached page query param on show internal toggle change" duration="346"/>
+    <testCase name="List when some list items are selected renders delete/purge buttons" duration="244"/>
+    <testCase name="List when some list items are selected triggers the deleteTopics when clicked on the delete button" duration="262"/>
+    <testCase name="List when some list items are selected triggers the clearTopicsMessages when clicked on the clear button" duration="206"/>
+    <testCase name="List when some list items are selected closes ConfirmationModal when clicked on the cancel button" duration="278"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/SendMessage/__test__/SendMessage.spec.tsx">
+    <testCase name="SendMessage fetches schema on first render" duration="237"/>
+    <testCase name="SendMessage when schema is fetched calls sendTopicMessage on submit" duration="983"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/New/__tests__/New.spec.tsx">
+    <testCase name="New container renders view" duration="64"/>
+    <testCase name="New view fetches connects on mount" duration="162"/>
+    <testCase name="New view calls createConnector on form submit" duration="351"/>
+    <testCase name="New view redirects to connector details view on successful submit" duration="559"/>
+    <testCase name="New view does not redirect to connector details view on unsuccessful submit" duration="241"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/__test__/Messages.spec.tsx">
+    <testCase name="Messages component rendering default behavior with the search params should check default seekDirection if it actually take the value from the url" duration="503"/>
+    <testCase name="Messages component rendering default behavior with the search params should check the SeekDirection select changes" duration="1029"/>
+    <testCase name="Messages Component rendering with custom Url search params reacts to a change of seekDirection in the url which make the select pick up different value" duration="240"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/shared/Form/__tests__/TopicForm.spec.tsx">
+    <testCase name="TopicForm renders" duration="1714"/>
+    <testCase name="TopicForm submits" duration="236"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/Filters/__tests__/FilterModal.spec.tsx">
+    <testCase name="FilterModal component renders component with add filter modal" duration="608"/>
+    <testCase name="FilterModal component renders component with edit filter modal" duration="587"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/KsqlDb/Query/__test__/Query.spec.tsx">
+    <testCase name="Query renders" duration="175"/>
+    <testCase name="Query fetch on execute" duration="378"/>
+    <testCase name="Query fetch on execute with streamParams" duration="582"/>
+    <testCase name="Query fetch on execute with streamParams" duration="636"/>
+    <testCase name="getFormattedErrorFromTableData works" duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/New/__test__/New.spec.tsx">
+    <testCase name="New checks header for create new" duration="274"/>
+    <testCase name="New checks header for copy" duration="249"/>
+    <testCase name="New validates form" duration="280"/>
+    <testCase name="New submits valid form" duration="568"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/topicMessages/__test__/reducer.spec.ts">
+    <testCase name="TopicMessages reducer Adds new message" duration="8"/>
+    <testCase name="TopicMessages reducer Adds new message with live tailing one" duration="34"/>
+    <testCase name="TopicMessages reducer Adds new message with live tailing off" duration="12"/>
+    <testCase name="TopicMessages reducer Clears messages" duration="0"/>
+    <testCase name="TopicMessages reducer Updates Topic Messages Phase" duration="1"/>
+    <testCase name="TopicMessages reducer Updates Topic Messages Meta" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/MessageContent/__tests__/MessageContent.spec.tsx">
+    <testCase name="MessageContent screen renders key format in document" duration="147"/>
+    <testCase name="MessageContent screen renders content format in document" duration="75"/>
+    <testCase name="MessageContent screen when switched to display the key has a tab with is-active classname" duration="459"/>
+    <testCase name="MessageContent screen when switched to display the key displays the key in the EditorViewer" duration="196"/>
+    <testCase name="MessageContent screen when switched to display the headers has a tab with is-active classname" duration="138"/>
+    <testCase name="MessageContent screen when switched to display the headers displays the key in the EditorViewer" duration="172"/>
+    <testCase name="MessageContent screen when switched to display the content has a tab with is-active classname" duration="347"/>
+    <testCase name="checking content type depend on message type renders component with message having JSON type" duration="123"/>
+    <testCase name="checking content type depend on message type renders component with message having AVRO type" duration="65"/>
+    <testCase name="checking content type depend on message type renders component with message having PROTOBUF type" duration="52"/>
+    <testCase name="checking content type depend on message type renders component with message having no type which is equal to having PROTOBUF type" duration="36"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/Details/__tests__/Details.spec.tsx">
+    <testCase name="Details component when consumer groups are NOT fetched renders progress bar for initial state" duration="114"/>
+    <testCase name="Details component when consumer gruops are fetched renders component" duration="625"/>
+    <testCase name="Details component when consumer gruops are fetched handles [Reset offset] click" duration="293"/>
+    <testCase name="Details component when consumer gruops are fetched shows confirmation modal on consumer group delete" duration="349"/>
+    <testCase name="Details component when consumer gruops are fetched handles [Delete consumer group] click" duration="279"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/Diff/__test__/Diff.spec.tsx">
+    <testCase name="Diff Container renders view" duration="104"/>
+    <testCase name="Diff when page with schema versions is loading renders PageLoader" duration="118"/>
+    <testCase name="Diff when schema versions are loaded and no specified versions in path renders all options" duration="199"/>
+    <testCase name="Diff when schema versions are loaded and no specified versions in path renders left select with empty value" duration="360"/>
+    <testCase name="Diff when schema versions are loaded and no specified versions in path renders right select with empty value" duration="220"/>
+    <testCase name="Diff when schema versions are loaded and two versions in path renders left select with version 1" duration="167"/>
+    <testCase name="Diff when schema versions are loaded and two versions in path renders right select with version 2" duration="292"/>
+    <testCase name="Diff when schema versions are loaded and only one versions in path renders left select with version 1" duration="273"/>
+    <testCase name="Diff when schema versions are loaded and only one versions in path renders right select with empty value" duration="163"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Nav/__tests__/ClusterMenuItem.spec.tsx">
+    <testCase name="ClusterMenuItem renders component with correct title" duration="43"/>
+    <testCase name="ClusterMenuItem renders top level component with correct styles" duration="39"/>
+    <testCase name="ClusterMenuItem renders non-top level component with correct styles" duration="78"/>
+    <testCase name="ClusterMenuItem renders list item with link inside" duration="133"/>
+    <testCase name="ClusterMenuItem renders list item without link inside" duration="17"/>
+    <testCase name="ClusterMenuItem renders list item with children" duration="97"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Select/__tests__/Select.spec.tsx">
+    <testCase name="Custom Select when isLive is not specified renders component" duration="154"/>
+    <testCase name="Custom Select when isLive is not specified show select options when select is being clicked" duration="143"/>
+    <testCase name="Custom Select when isLive is not specified checking select option change" duration="162"/>
+    <testCase name="Custom Select when isLive is not specified trying to select disabled option does not trigger change" duration="177"/>
+    <testCase name="Custom Select when non-live there is not live icon" duration="6"/>
+    <testCase name="Custom Select when live there is live icon" duration="5"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/shared/Form/CustomParams/__test__/CustomParamField.spec.tsx">
+    <testCase name="CustomParamsField renders with props" duration="292"/>
+    <testCase name="CustomParamsField core functionality works click on button triggers remove" duration="91"/>
+    <testCase name="CustomParamsField core functionality works pressing space on button triggers remove" duration="109"/>
+    <testCase name="CustomParamsField core functionality works can select option" duration="241"/>
+    <testCase name="CustomParamsField core functionality works selecting option updates textbox value" duration="172"/>
+    <testCase name="CustomParamsField core functionality works selecting option updates triggers setExistingFields" duration="217"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Settings/__test__/Settings.spec.tsx">
+    <testCase name="Settings should check it returns null if no config is passed" duration="5"/>
+    <testCase name="Settings should show Page loader when it is in fetching state and config is given" duration="44"/>
+    <testCase name="Settings should check and return null if it is not fetched and config is not given" duration="3"/>
+    <testCase name="Settings Settings Component with Data should view the correct number of table row with header included elements after config fetching" duration="86"/>
+    <testCase name="Settings Settings Component with Data should view the correct number of table row in tbody included elements after config fetching" duration="52"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/List/GlobalSchemaSelector/__test__/GlobalSchemaSelector.spec.tsx">
+    <testCase name="GlobalSchemaSelector renders with initial prop" duration="173"/>
+    <testCase name="GlobalSchemaSelector shows popup when select value is changed" duration="154"/>
+    <testCase name="GlobalSchemaSelector resets select value when cancel is clicked" duration="267"/>
+    <testCase name="GlobalSchemaSelector sets new schema when confirm is clicked" duration="251"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Edit/__test__/DangerZone.spec.tsx">
+    <testCase name="DangerZone renders" duration="327"/>
+    <testCase name="DangerZone calls updateTopicPartitionsCount" duration="316"/>
+    <testCase name="DangerZone calls updateTopicReplicationFactor" duration="497"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/Edit/__tests__/Edit.spec.tsx">
+    <testCase name="Edit fetch failed renders pageloader" duration="182"/>
+    <testCase name="Edit fetch success has schema versions renders component with schema info" duration="171"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Alerts/__tests__/Alerts.spec.tsx">
+    <testCase name="Alerts renders alerts" duration="116"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Overview/__test__/Overview.spec.tsx">
+    <testCase name="Overview when it has internal flag does not render the Action button a Topic" duration="133"/>
+    <testCase name="Overview when it has internal flag does not render Partitions" duration="52"/>
+    <testCase name="Overview should render circular alert should be in document" duration="133"/>
+    <testCase name="Overview should render circular alert should be the appropriate color" duration="68"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/Details/__test__/Details.spec.tsx">
+    <testCase name="Details fetch failed renders pageloader" duration="59"/>
+    <testCase name="Details fetch success has schema versions renders component with schema info" duration="398"/>
+    <testCase name="Details fetch success empty schema versions renders versions table with 0 items" duration="196"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Pagination/__tests__/PageControl.spec.tsx">
+    <testCase name="PageControl renders current page" duration="41"/>
+    <testCase name="PageControl renders non-current page" duration="42"/>
+    <testCase name="PageControl renders page number" duration="17"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/List/__tests__/List.spec.tsx">
+    <testCase name="Connectors List Container renders view with initial state of storage" duration="225"/>
+    <testCase name="Connectors List View renders PageLoader" duration="87"/>
+    <testCase name="Connectors List View renders table" duration="92"/>
+    <testCase name="Connectors List View renders connectors list" duration="94"/>
+    <testCase name="Connectors List View handles fetchConnects and fetchConnectors" duration="31"/>
+    <testCase name="Connectors List View renders actions if cluster is not readonly" duration="110"/>
+    <testCase name="Connectors List View readonly cluster does not render actions if cluster is readonly" duration="55"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/__test__/ConsumerGroups.spec.tsx">
+    <testCase name="ConsumerGroups renders with initial state" duration="200"/>
+    <testCase name="ConsumerGroups Default Route and Fetching Consumer Groups renders empty table on no consumer group response" duration="164"/>
+    <testCase name="ConsumerGroups Default Route and Fetching Consumer Groups renders with 404 from consumer groups" duration="36"/>
+    <testCase name="ConsumerGroups Default Route and Fetching Consumer Groups renders with 200 from consumer groups" duration="217"/>
+    <testCase name="ConsumerGroups Default Route and Fetching Consumer Groups renders with 200 from consumer groups with Searched Query " duration="105"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/Details/Tasks/__tests__/Tasks.spec.tsx">
+    <testCase name="Tasks container renders view" duration="157"/>
+    <testCase name="Tasks view matches snapshot" duration="48"/>
+    <testCase name="Tasks view matches snapshot when fetching tasks" duration="21"/>
+    <testCase name="Tasks view matches snapshot when no tasks" duration="17"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/Filters/__tests__/SavedFilters.spec.tsx">
+    <testCase name="SavedFilter Component should check the Cancel button click" duration="95"/>
+    <testCase name="SavedFilter Component should check on go back button click" duration="49"/>
+    <testCase name="SavedFilter Component Empty Filters Rendering should check the rendering of the empty filter" duration="34"/>
+    <testCase name="SavedFilter Component Saved Filters Deleting Editing should check the normal data rendering" duration="56"/>
+    <testCase name="SavedFilter Component Saved Filters Deleting Editing should check the Filter edit Button works" duration="109"/>
+    <testCase name="SavedFilter Component Saved Filters Deleting Editing should check the select filter" duration="107"/>
+    <testCase name="SavedFilter Component Saved Filters Deletion Open Confirmation for the deletion modal" duration="155"/>
+    <testCase name="SavedFilter Component Saved Filters Deletion Close Confirmations deletion modal with button" duration="193"/>
+    <testCase name="SavedFilter Component Saved Filters Deletion Delete the saved filter" duration="222"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/Details/Actions/__tests__/Actions.spec.tsx">
+    <testCase name="Actions container renders view" duration="58"/>
+    <testCase name="Actions view matches snapshot" duration="35"/>
+    <testCase name="Actions view matches snapshot when paused" duration="96"/>
+    <testCase name="Actions view matches snapshot when failed" duration="41"/>
+    <testCase name="Actions view matches snapshot when unassigned" duration="7"/>
+    <testCase name="Actions view matches snapshot when deleting connector" duration="28"/>
+    <testCase name="Actions view matches snapshot when running connector action" duration="12"/>
+    <testCase name="Actions view opens confirmation modal when delete button clicked and closes when cancel button clicked" duration="31"/>
+    <testCase name="Actions view calls deleteConnector when confirm button clicked" duration="11"/>
+    <testCase name="Actions view redirects after delete" duration="44"/>
+    <testCase name="Actions view calls restartConnector when restart button clicked" duration="43"/>
+    <testCase name="Actions view calls pauseConnector when pause button clicked" duration="26"/>
+    <testCase name="Actions view calls resumeConnector when resume button clicked" duration="30"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/List/__test__/ConsumerGroupsTableCells.spec.tsx">
+    <testCase name="Consumer Groups Table Cells StatusCell should Tag props render normally" duration="44"/>
+    <testCase name="Consumer Groups Table Cells GroupIdCell should GroupIdCell props render normally" duration="7"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/actions/__test__/actions.spec.ts">
+    <testCase name="Actions dismissAlert creates a REQUEST action" duration="1"/>
+    <testCase name="Actions clearMessagesTopicAction creates a REQUEST action" duration="0"/>
+    <testCase name="Actions clearMessagesTopicAction creates a SUCCESS action" duration="1"/>
+    <testCase name="Actions clearMessagesTopicAction creates a FAILURE action" duration="0"/>
+    <testCase name="Actions fetchTopicConsumerGroups creates a REQUEST action" duration="0"/>
+    <testCase name="Actions fetchTopicConsumerGroups creates a SUCCESS action" duration="0"/>
+    <testCase name="Actions fetchTopicConsumerGroups creates a FAILURE action" duration="1"/>
+    <testCase name="Actions setTopicsSearchAction creates SET_TOPICS_SEARCH" duration="23"/>
+    <testCase name="Actions setTopicsOrderByAction creates SET_TOPICS_ORDER_BY" duration="1"/>
+    <testCase name="Actions topic messages creates ADD_TOPIC_MESSAGE" duration="0"/>
+    <testCase name="Actions topic messages creates RESET_TOPIC_MESSAGES" duration="0"/>
+    <testCase name="Actions topic messages creates UPDATE_TOPIC_MESSAGES_PHASE" duration="1"/>
+    <testCase name="Actions topic messages creates UPDATE_TOPIC_MESSAGES_META" duration="0"/>
+    <testCase name="Actions sending messages fetchTopicMessageSchemaAction creates GET_TOPIC_SCHEMA__REQUEST" duration="1"/>
+    <testCase name="Actions sending messages fetchTopicMessageSchemaAction creates GET_TOPIC_SCHEMA__SUCCESS" duration="1"/>
+    <testCase name="Actions sending messages fetchTopicMessageSchemaAction creates GET_TOPIC_SCHEMA__FAILURE" duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/Details/__tests__/ListItem.spec.tsx">
+    <testCase name="ListItem should renders list item with topic content closed and check if element exists" duration="264"/>
+    <testCase name="ListItem should renders list item with topic content open" duration="89"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/Details/__tests__/Details.spec.tsx">
+    <testCase name="Details container renders view" duration="75"/>
+    <testCase name="Details view matches snapshot" duration="28"/>
+    <testCase name="Details view matches snapshot when fetching connector" duration="36"/>
+    <testCase name="Details view matches snapshot when fetching tasks" duration="6"/>
+    <testCase name="Details view is empty when no connector" duration="3"/>
+    <testCase name="Details view fetches connector on mount" duration="40"/>
+    <testCase name="Details view fetches tasks on mount" duration="39"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Edit/__test__/Edit.spec.tsx">
+    <testCase name="DangerZone renders" duration="495"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/connect/__test__/reducer.spec.ts">
+    <testCase name="Connect slice Reducer reacts on fetchConnects/fulfilled" duration="10"/>
+    <testCase name="Connect slice Reducer reacts on fetchConnectors/fulfilled" duration="1"/>
+    <testCase name="Connect slice Reducer reacts on fetchConnector/fulfilled" duration="0"/>
+    <testCase name="Connect slice Reducer reacts on createConnector/fulfilled" duration="1"/>
+    <testCase name="Connect slice Reducer reacts on deleteConnector/fulfilled" duration="1"/>
+    <testCase name="Connect slice Reducer reacts on setConnectorStatusState/fulfilled" duration="4"/>
+    <testCase name="Connect slice Reducer reacts on fetchConnectorTasks/fulfilled" duration="2"/>
+    <testCase name="Connect slice Reducer reacts on fetchConnectorConfig/fulfilled" duration="2"/>
+    <testCase name="Connect slice Reducer reacts on updateConnectorConfig/fulfilled" duration="0"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnects creates fetchConnects/fulfilled when fetching connects" duration="13"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnects creates fetchConnects/rejected" duration="1"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnectors creates fetchConnectors/fulfilled when fetching connectors" duration="3"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnectors creates fetchConnectors/rejected" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnector creates fetchConnector/fulfilled when fetching connector" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnector creates fetchConnector/rejected" duration="1"/>
+    <testCase name="Connect slice Thunks Thunks createConnector creates createConnector/fulfilled when fetching connects" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks createConnector creates createConnector/rejected" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks deleteConnector creates deleteConnector/fulfilled" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks deleteConnector creates deleteConnector/rejected" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnectorTasks creates fetchConnectorTasks/fulfilled when fetching connects" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnectorTasks creates fetchConnectorTasks/rejected" duration="1"/>
+    <testCase name="Connect slice Thunks Thunks restartConnector creates restartConnector/fulfilled" duration="3"/>
+    <testCase name="Connect slice Thunks Thunks restartConnector creates restartConnector/rejected" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks pauseConnector creates pauseConnector/fulfilled when fetching connects" duration="1"/>
+    <testCase name="Connect slice Thunks Thunks pauseConnector creates pauseConnector/rejected" duration="1"/>
+    <testCase name="Connect slice Thunks Thunks resumeConnector creates resumeConnector/fulfilled when fetching connects" duration="1"/>
+    <testCase name="Connect slice Thunks Thunks resumeConnector creates resumeConnector/rejected" duration="8"/>
+    <testCase name="Connect slice Thunks Thunks restartConnectorTask creates restartConnectorTask/fulfilled when fetching connects" duration="5"/>
+    <testCase name="Connect slice Thunks Thunks restartConnectorTask creates restartConnectorTask/rejected" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnectorConfig creates fetchConnectorConfig/fulfilled when fetching connects" duration="57"/>
+    <testCase name="Connect slice Thunks Thunks fetchConnectorConfig creates fetchConnectorConfig/rejected" duration="2"/>
+    <testCase name="Connect slice Thunks Thunks updateConnectorConfig creates updateConnectorConfig/fulfilled when fetching connects" duration="1"/>
+    <testCase name="Connect slice Thunks Thunks updateConnectorConfig creates updateConnectorConfig/rejected" duration="16"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/Edit/__tests__/Edit.spec.tsx">
+    <testCase name="Edit container renders view" duration="213"/>
+    <testCase name="Edit view fetches config on mount" duration="29"/>
+    <testCase name="Edit view calls updateConfig on form submit" duration="52"/>
+    <testCase name="Edit view redirects to connector config view on successful submit" duration="87"/>
+    <testCase name="Edit view does not redirect to connector config view on unsuccessful submit" duration="65"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/SendMessage/__test__/validateMessage.spec.ts">
+    <testCase name="validateMessage returns no errors on correct input data" duration="382"/>
+    <testCase name="validateMessage returns errors on invalid input data" duration="143"/>
+    <testCase name="validateMessage returns error on broken key value" duration="126"/>
+    <testCase name="validateMessage returns error on broken content value" duration="31"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Nav/ClusterTab/__tests__/ClusterTab.spec.tsx">
+    <testCase name="ClusterTab component renders cluster name" duration="18"/>
+    <testCase name="ClusterTab component renders correct status icon for online cluster" duration="6"/>
+    <testCase name="ClusterTab component renders correct status icon for offline cluster" duration="25"/>
+    <testCase name="ClusterTab component handles onClick action" duration="71"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/__tests__/Topic.spec.tsx">
+    <testCase name="renders Edit page" duration="21"/>
+    <testCase name="renders Send Message page" duration="4"/>
+    <testCase name="renders Details Container page" duration="3"/>
+    <testCase name="renders Page loader" duration="10"/>
+    <testCase name="fetches topicDetails" duration="17"/>
+    <testCase name="resets topic messages after unmount" duration="7"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Cluster/__tests__/Cluster.spec.tsx">
+    <testCase name="Cluster renders Brokers" duration="47"/>
+    <testCase name="Cluster renders Topics" duration="44"/>
+    <testCase name="Cluster renders ConsumerGroups" duration="15"/>
+    <testCase name="Cluster configured features does not render Schemas if SCHEMA_REGISTRY is not configured" duration="4"/>
+    <testCase name="Cluster configured features renders Schemas if SCHEMA_REGISTRY is configured" duration="16"/>
+    <testCase name="Cluster configured features renders Connect if KAFKA_CONNECT is configured" duration="50"/>
+    <testCase name="Cluster configured features renders KSQL if KSQL_DB is configured" duration="4"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/table/__tests__/TableHeaderCell.spec.tsx">
+    <testCase name="TableHeaderCell renders without props" duration="195"/>
+    <testCase name="TableHeaderCell renders with title &amp; preview text" duration="28"/>
+    <testCase name="TableHeaderCell renders with orderable props" duration="23"/>
+    <testCase name="TableHeaderCell renders click on title triggers handler" duration="50"/>
+    <testCase name="TableHeaderCell renders space on title triggers handler" duration="77"/>
+    <testCase name="TableHeaderCell click on preview triggers handler" duration="71"/>
+    <testCase name="TableHeaderCell click on preview triggers handler" duration="95"/>
+    <testCase name="TableHeaderCell renders without sort indication" duration="49"/>
+    <testCase name="TableHeaderCell renders with hightlighted title when orderBy and orderValue are equal" duration="9"/>
+    <testCase name="TableHeaderCell renders without hightlighted title when orderBy and orderValue are not equal" duration="16"/>
+    <testCase name="TableHeaderCell renders with default (primary) theme" duration="40"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/DiffViewer/__tests__/DiffViewer.spec.tsx">
+    <testCase name="Editor component renders" duration="136"/>
+    <testCase name="Editor component renders with fixed height" duration="60"/>
+    <testCase name="Editor component renders with fixed height with no value" duration="77"/>
+    <testCase name="Editor component renders without fixed height with no value" duration="37"/>
+    <testCase name="Editor component renders without fixed height with one value" duration="73"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/__test__/utils.spec.ts">
+    <testCase name="utils filterOptions returns options if no filter is defined" duration="1"/>
+    <testCase name="utils filterOptions returns filtered options" duration="1"/>
+    <testCase name="utils getOffsetFromSeekToParam returns nothing when param &quot;seekType&quot; is equal BEGGINING" duration="2"/>
+    <testCase name="utils getOffsetFromSeekToParam returns nothing when param &quot;seekType&quot; is equal TIMESTAMP" duration="1"/>
+    <testCase name="utils getOffsetFromSeekToParam returns correct messages list when param &quot;seekType&quot; is equal OFFSET" duration="0"/>
+    <testCase name="utils getOffsetFromSeekToParam returns 0 when param &quot;seekTo&quot; is not defined and param &quot;seekType&quot; is equal OFFSET" duration="1"/>
+    <testCase name="utils getTimestampFromSeekToParam returns null when param &quot;seekType&quot; is equal BEGGINING" duration="2"/>
+    <testCase name="utils getTimestampFromSeekToParam returns null when param &quot;seekType&quot; is equal OFFSET" duration="1"/>
+    <testCase name="utils getTimestampFromSeekToParam returns correct messages list when param &quot;seekType&quot; is equal TIMESTAMP" duration="0"/>
+    <testCase name="utils getTimestampFromSeekToParam returns default timestamp when param &quot;seekTo&quot; is empty and param &quot;seekType&quot; is equal TIMESTAMP" duration="0"/>
+    <testCase name="utils getSelectedPartitionsFromSeekToParam returns parsed partition from params when partition list includes selected partition" duration="1"/>
+    <testCase name="utils getSelectedPartitionsFromSeekToParam returns parsed partition from params when partition list NOT includes selected partition" duration="0"/>
+    <testCase name="utils getSelectedPartitionsFromSeekToParam returns partitions when param &quot;seekTo&quot; is not defined" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Dashboard/ClustersWidget/__test__/ClustersWidget.spec.tsx">
+    <testCase name="ClustersWidget renders clusterWidget list" duration="205"/>
+    <testCase name="ClustersWidget hides online cluster widgets" duration="160"/>
+    <testCase name="ClustersWidget when cluster is read-only" duration="47"/>
+    <testCase name="ClustersWidget render clusterWidget cells" duration="167"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/List/__test__/List.spec.tsx">
+    <testCase name="List fetch error shows progressbar" duration="131"/>
+    <testCase name="List fetch success responded without schemas renders empty table" duration="59"/>
+    <testCase name="List fetch success responded with schemas renders list" duration="147"/>
+    <testCase name="List fetch success responded with readonly cluster schemas does not render Create Schema button" duration="143"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Pagination/__tests__/Pagination.spec.tsx">
+    <testCase name="Pagination next &amp; prev buttons renders disable prev button and enabled next link" duration="52"/>
+    <testCase name="Pagination next &amp; prev buttons renders disable next button and enabled prev link" duration="15"/>
+    <testCase name="Pagination next &amp; prev buttons renders next &amp; prev links with correct path" duration="35"/>
+    <testCase name="Pagination spread renders 1 spread element after first page control" duration="141"/>
+    <testCase name="Pagination spread renders 1 spread element before last spread control" duration="86"/>
+    <testCase name="Pagination spread renders 2 spread elements" duration="234"/>
+    <testCase name="Pagination spread renders 0 spread elements" duration="115"/>
+    <testCase name="Pagination current page check if it sets page 8 as current when page param is set" duration="41"/>
+    <testCase name="Pagination current page check if it sets first page as current when page param not set" duration="28"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/List/__test__/List.spec.tsx">
+    <testCase name="List renders empty table" duration="159"/>
+    <testCase name="List consumerGroups are fetched renders all rows with consumers" duration="142"/>
+    <testCase name="List consumerGroups are fetched Testing the Ordering should test the sort order functionality" duration="140"/>
+    <testCase name="List consumerGroups are fetched with custom parameters should test the order by functionality of another element" duration="172"/>
+    <testCase name="List consumerGroups are fetched with custom parameters should view the ordered list with the right prop" duration="122"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/KsqlDb/Query/renderer/TableRenderer/__test__/TableRenderer.spec.tsx">
+    <testCase name="TableRenderer renders" duration="233"/>
+    <testCase name="TableRenderer renders with empty arrays" duration="8"/>
+    <testCase name="hasJsonStructure works" duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/ConsumerGroups/__test__/TopicConsumerGroups.spec.tsx">
+    <testCase name="TopicConsumerGroups Default Setup should view the Page loader when it is fetching state" duration="45"/>
+    <testCase name="TopicConsumerGroups don&apos;t render ConsumerGroups in Topic" duration="53"/>
+    <testCase name="TopicConsumerGroups render ConsumerGroups in Topic" duration="21"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Nav/__tests__/ClusterMenu.spec.tsx">
+    <testCase name="ClusterMenu renders cluster menu with default set of features" duration="273"/>
+    <testCase name="ClusterMenu renders cluster menu with correct set of features" duration="94"/>
+    <testCase name="ClusterMenu renders open cluster menu" duration="28"/>
+    <testCase name="ClusterMenu makes Kafka Connect link active" duration="124"/>
+    <testCase name="ClusterMenu makes Kafka Connect link active" duration="88"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/Details/Tasks/ListItem/__tests__/ListItem.spec.tsx">
+    <testCase name="ListItem renders" duration="460"/>
+    <testCase name="ListItem calls restartTask on button click" duration="92"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/Details/Config/__test__/Config.spec.tsx">
+    <testCase name="Config container renders view" duration="58"/>
+    <testCase name="Config view matches snapshot" duration="7"/>
+    <testCase name="Config view matches snapshot when fetching config" duration="22"/>
+    <testCase name="Config view is empty when no config" duration="19"/>
+    <testCase name="Config view fetches config on mount" duration="8"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/__test__/MessagesTable.spec.tsx">
+    <testCase name="MessagesTable Default props Setup for MessagesTable component should check the render" duration="42"/>
+    <testCase name="MessagesTable Default props Setup for MessagesTable component should check the if no elements is rendered in the table" duration="27"/>
+    <testCase name="MessagesTable Default props Setup for MessagesTable component should check if next button exist and check the click after next click" duration="58"/>
+    <testCase name="MessagesTable Custom Setup with different props value should check if next click is gone during isLive Param" duration="39"/>
+    <testCase name="MessagesTable Custom Setup with different props value should check the display of the loader element" duration="24"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Dropdown/__tests__/Dropdown.spec.tsx">
+    <testCase name="Dropdown renders Dropdown with initial props" duration="12"/>
+    <testCase name="Dropdown renders custom children" duration="23"/>
+    <testCase name="Dropdown renders dropdown with a right-aligned menu" duration="5"/>
+    <testCase name="Dropdown renders dropdown with a popup menu" duration="23"/>
+    <testCase name="Dropdown handles click" duration="50"/>
+    <testCase name="Dropdown matches snapshot" duration="53"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/lib/hooks/__tests__/useModal.spec.ts">
+    <testCase name="useModal CustomHook should check true initial values" duration="4"/>
+    <testCase name="useModal CustomHook should check false initial values" duration="1"/>
+    <testCase name="useModal CustomHook should check setOpen function" duration="1"/>
+    <testCase name="useModal CustomHook should check setClose function" duration="1"/>
+    <testCase name="useModal CustomHook should check setToggle function" duration="9"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/__test__/Schemas.spec.tsx">
+    <testCase name="Schemas renders List" duration="93"/>
+    <testCase name="Schemas renders New" duration="36"/>
+    <testCase name="Schemas renders Details" duration="40"/>
+    <testCase name="Schemas renders Edit" duration="26"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/List/__tests__/ListItem.spec.tsx">
+    <testCase name="ListItem renders without checkbox for internal topic" duration="58"/>
+    <testCase name="ListItem renders with checkbox for external topic" duration="7"/>
+    <testCase name="ListItem triggers the toggleTopicSelected when clicked on the checkbox input" duration="33"/>
+    <testCase name="ListItem renders correct out of sync replicas number" duration="7"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Metrics/__tests__/Indicator.spec.tsx">
+    <testCase name="Indicator renders indicator" duration="7"/>
+    <testCase name="Indicator should render circular alert should be in document" duration="72"/>
+    <testCase name="Indicator should render circular alert success alert" duration="43"/>
+    <testCase name="Indicator should render circular alert error alert" duration="61"/>
+    <testCase name="Indicator should render circular alert warning alert" duration="68"/>
+    <testCase name="Indicator should render circular alert info alert" duration="45"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/ConfirmationModal/__test__/ConfirmationModal.spec.tsx">
+    <testCase name="ConfirmationModal renders nothing" duration="37"/>
+    <testCase name="ConfirmationModal renders modal" duration="80"/>
+    <testCase name="ConfirmationModal renders modal with default header" duration="51"/>
+    <testCase name="ConfirmationModal renders modal with custom header" duration="19"/>
+    <testCase name="ConfirmationModal Check the text on the submit button default behavior" duration="26"/>
+    <testCase name="ConfirmationModal handles onConfirm when user clicks confirm button" duration="22"/>
+    <testCase name="ConfirmationModal Check the text on the submit button" duration="40"/>
+    <testCase name="ConfirmationModal cancellation when not confirming handles onCancel when user clicks on modal-background" duration="19"/>
+    <testCase name="ConfirmationModal cancellation when not confirming handles onCancel when user clicks on Cancel button" duration="75"/>
+    <testCase name="ConfirmationModal cancellation when confirming does not call onCancel when user clicks on modal-background" duration="13"/>
+    <testCase name="ConfirmationModal cancellation when confirming does not call onCancel when user clicks on Cancel button" duration="59"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Dashboard/ClustersWidget/__test__/ClustersWidgetContainer.spec.tsx">
+    <testCase name="ClustersWidgetContainer container renders view" duration="180"/>
+    <testCase name="ClustersWidgetContainer view empty ClusterWidget  is empty when no online clusters" duration="54"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/KsqlDb/List/__test__/List.spec.tsx">
+    <testCase name="KsqlDb List renders placeholder on empty data" duration="253"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/Details/Overview/__tests__/Overview.spec.tsx">
+    <testCase name="Overview container renders view" duration="107"/>
+    <testCase name="Overview view matches snapshot" duration="19"/>
+    <testCase name="Overview view is empty when no connector" duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/List/__tests__/ListItem.spec.tsx">
+    <testCase name="Connectors ListItem renders item" duration="161"/>
+    <testCase name="Connectors ListItem renders item with failed tasks" duration="54"/>
+    <testCase name="Connectors ListItem does not render info about tasks if taksCount is undefined" duration="9"/>
+    <testCase name="Connectors ListItem handles cancel" duration="20"/>
+    <testCase name="Connectors ListItem handles delete" duration="50"/>
+    <testCase name="Connectors ListItem handles delete when clusterName is not present" duration="34"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/New/__test__/New.spec.tsx">
+    <testCase name="New Component renders component" duration="93"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Input/__tests__/Input.spec.tsx">
+    <testCase name="Custom Input with no icons matches the snapshot" duration="40"/>
+    <testCase name="Custom Input with icons matches the snapshot" duration="22"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/actions/__test__/thunks/topics.spec.ts">
+    <testCase name="Thunks deleteTopis creates DELETE_TOPIC__SUCCESS when deleting existing topic" duration="3"/>
+    <testCase name="Thunks deleteTopis creates DELETE_TOPIC__FAILURE when deleting existing topic" duration="1"/>
+    <testCase name="Thunks recreateTopic creates RECREATE_TOPIC__SUCCESS when recreating existing topic" duration="14"/>
+    <testCase name="Thunks recreateTopic creates RECREATE_TOPIC__FAILURE when recreating existing topic" duration="1"/>
+    <testCase name="Thunks clearTopicMessages creates CLEAR_TOPIC_MESSAGES__SUCCESS when deleting existing messages" duration="1"/>
+    <testCase name="Thunks clearTopicMessages creates CLEAR_TOPIC_MESSAGES__FAILURE when deleting existing messages" duration="1"/>
+    <testCase name="Thunks fetchTopicConsumerGroups GET_TOPIC_CONSUMER_GROUPS__FAILURE" duration="1"/>
+    <testCase name="Thunks fetchTopicConsumerGroups GET_TOPIC_CONSUMER_GROUPS__SUCCESS" duration="1"/>
+    <testCase name="Thunks fetchTopicMessageSchema creates GET_TOPIC_SCHEMA__FAILURE" duration="3"/>
+    <testCase name="Thunks fetchTopicMessageSchema creates GET_TOPIC_SCHEMA__SUCCESS" duration="2"/>
+    <testCase name="Thunks increasing partitions count calls updateTopicPartitionsCountAction.success on success" duration="5"/>
+    <testCase name="Thunks increasing partitions count calls updateTopicPartitionsCountAction.failure on failure" duration="1"/>
+    <testCase name="Thunks updating replication factor calls updateTopicReplicationFactorAction.success on success" duration="2"/>
+    <testCase name="Thunks updating replication factor calls updateTopicReplicationFactorAction.failure on failure" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Search/__tests__/Search.spec.tsx">
+    <testCase name="Search calls handleSearch on input" duration="120"/>
+    <testCase name="Search when placeholder is provided" duration="17"/>
+    <testCase name="Search when placeholder is not provided" duration="14"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/ksqlDb/__test__/selectors.spec.ts">
+    <testCase name="TopicMessages selectors Initial state Returns empty state" duration="1"/>
+    <testCase name="TopicMessages selectors State Returns tables and streams" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/Details/TopicContents/__test__/TopicContents.spec.tsx">
+    <testCase name="TopicContent renders empty table" duration="37"/>
+    <testCase name="TopicContent renders table with content" duration="84"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/shared/Form/__tests__/TimeToRetainBtn.spec.tsx">
+    <testCase name="TimeToRetainBtn Component rendering with its Default Props Setups should test the component rendering on the screen" duration="48"/>
+    <testCase name="TimeToRetainBtn Component rendering with its Default Props Setups should test the non active state of the button and its styling" duration="61"/>
+    <testCase name="TimeToRetainBtn Component rendering with its Default Props Setups should test the non active state with click becoming active" duration="29"/>
+    <testCase name="TimeToRetainBtn Component rendering with its Default Props Setups should test the active state of the button and its styling" duration="7"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/Details/__test__/LatestVersionItem.spec.tsx">
+    <testCase name="LatestVersionItem renders latest version of json schema" duration="48"/>
+    <testCase name="LatestVersionItem renders latest version of compatibility" duration="77"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Alerts/__tests__/Alert.spec.tsx">
+    <testCase name="Alert renders with initial props" duration="96"/>
+    <testCase name="Alert handles dismiss callback" duration="54"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/brokers/__test__/selectors.spec.ts">
+    <testCase name="Brokers selectors Initial State returns broker count" duration="1"/>
+    <testCase name="Brokers selectors Initial State returns active controllers" duration="0"/>
+    <testCase name="Brokers selectors Initial State returns online partition count" duration="1"/>
+    <testCase name="Brokers selectors Initial State returns offline partition count" duration="0"/>
+    <testCase name="Brokers selectors Initial State returns in sync replicas count" duration="0"/>
+    <testCase name="Brokers selectors Initial State returns out of sync replicas count" duration="0"/>
+    <testCase name="Brokers selectors Initial State returns under replicated partition count" duration="0"/>
+    <testCase name="Brokers selectors Initial State returns disk usage" duration="0"/>
+    <testCase name="Brokers selectors Initial State returns version" duration="1"/>
+    <testCase name="Brokers selectors state returns broker count" duration="1"/>
+    <testCase name="Brokers selectors state returns active controllers" duration="0"/>
+    <testCase name="Brokers selectors state returns online partition count" duration="0"/>
+    <testCase name="Brokers selectors state returns offline partition count" duration="0"/>
+    <testCase name="Brokers selectors state returns in sync replicas count" duration="0"/>
+    <testCase name="Brokers selectors state returns out of sync replicas count" duration="1"/>
+    <testCase name="Brokers selectors state returns under replicated partition count" duration="0"/>
+    <testCase name="Brokers selectors state returns disk usage" duration="0"/>
+    <testCase name="Brokers selectors state returns version" duration="1"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/SQLEditor/__tests__/SQLEditor.spec.tsx">
+    <testCase name="SQLEditor component matches the snapshot" duration="47"/>
+    <testCase name="SQLEditor component matches the snapshot with fixed height" duration="27"/>
+    <testCase name="SQLEditor component matches the snapshot with fixed height with no value" duration="68"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Nav/ClusterTab/__tests__/ClusterTab.styled.spec.tsx">
+    <testCase name="Cluster Styled Components Wrapper Component should check the rendering and correct Styling when it is open" duration="47"/>
+    <testCase name="Cluster Styled Components Wrapper Component should check the rendering and correct Styling when it is Not open" duration="66"/>
+    <testCase name="Cluster Styled Components StatusIcon Component should check the rendering and correct Styling when it is online" duration="230"/>
+    <testCase name="Cluster Styled Components StatusIcon Component should check the rendering and correct Styling when it is offline" duration="23"/>
+    <testCase name="Cluster Styled Components StatusIcon Component should check the rendering and correct Styling when it is Initializing" duration="17"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Metrics/__tests__/Section.spec.tsx">
+    <testCase name="Metrics.Section renders without title" duration="18"/>
+    <testCase name="Metrics.Section renders with title" duration="33"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Connect/__tests__/Connect.spec.tsx">
+    <testCase name="Connect renders ListContainer" duration="19"/>
+    <testCase name="Connect renders NewContainer" duration="4"/>
+    <testCase name="Connect renders DetailsContainer" duration="3"/>
+    <testCase name="Connect renders EditContainer" duration="5"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Nav/__tests__/Nav.spec.tsx">
+    <testCase name="Nav renders loader" duration="33"/>
+    <testCase name="Nav renders ClusterMenu" duration="123"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/__test__/Message.spec.tsx">
+    <testCase name="Message component shows the data in the table row" duration="71"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Version/__tests__/Version.spec.tsx">
+    <testCase name="Version renders" duration="77"/>
+    <testCase name="Version shows current tag and commit" duration="88"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Button/__tests__/Button.spec.tsx">
+    <testCase name="StyledButton should render with props S and Primary" duration="24"/>
+    <testCase name="StyledButton should render with inverted theme colors" duration="3"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/DynamicTextButton/__tests__/DynamicTextButton.spec.tsx">
+    <testCase name="DynamicButton exectutes callback" duration="95"/>
+    <testCase name="DynamicButton changes the text" duration="13"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/EditorViewer/__test__/EditorViewer.spec.tsx">
+    <testCase name="EditorViewer component renders JSONTree" duration="121"/>
+    <testCase name="EditorViewer component matches the snapshot with fixed height with no value" duration="3"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/KsqlDb/__test__/KsqlDb.spec.tsx">
+    <testCase name="KsqlDb Component KsqlDb matches snapshot" duration="47"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/topicMessages/__test__/selectors.spec.ts">
+    <testCase name="TopicMessages selectors Initial state returns empty message array" duration="4"/>
+    <testCase name="TopicMessages selectors Initial state returns undefined phase" duration="0"/>
+    <testCase name="TopicMessages selectors Initial state returns initial vesrion of meta" duration="0"/>
+    <testCase name="TopicMessages selectors state returns messages" duration="0"/>
+    <testCase name="TopicMessages selectors state returns phase" duration="1"/>
+    <testCase name="TopicMessages selectors state returns ordered versions of schema" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Breadcrumb/__tests__/Breadcrumb.spec.tsx">
+    <testCase name="Breadcrumb component renders the list of links" duration="17"/>
+    <testCase name="Breadcrumb component renders the topic overview" duration="5"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Dropdown/__tests__/DropdownItem.spec.tsx">
+    <testCase name="DropdownItem matches snapshot" duration="20"/>
+    <testCase name="DropdownItem handles Click" duration="39"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/PageLoader/__tests__/PageLoader.spec.tsx">
+    <testCase name="PageLoader renders spinner" duration="61"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/table/TableHeaderCell/__test__/TableHeaderCell.styled.spec.tsx">
+    <testCase name="TableHeaderCell.Styled Title Component test the default Parameters should test the props of Title Component" duration="42"/>
+    <testCase name="TableHeaderCell.Styled Title Component Custom props should test the sort order styling of Title Component" duration="8"/>
+    <testCase name="TableHeaderCell.Styled Title Component Custom props should test the Title Component styling without the ordering" duration="3"/>
+    <testCase name="TableHeaderCell.Styled Preview Component should render the preview and check themes values" duration="24"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/__test__/FiltersContainer.spec.tsx">
+    <testCase name="FiltersContainer renders view with initial state of storage" duration="32"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/shared/Form/__tests__/TimeToRetainBtns.spec.tsx">
+    <testCase name="TimeToRetainBtns should test the normal view rendering of the component" duration="135"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/ConsumerGroups/List/__test__/ListItem.spec.tsx">
+    <testCase name="List render empty ListItem" duration="4"/>
+    <testCase name="List renders item with stable status" duration="10"/>
+    <testCase name="List renders item with dead status" duration="4"/>
+    <testCase name="List renders item with empty status" duration="2"/>
+    <testCase name="List renders item with empty-string status" duration="3"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Schemas/List/__test__/ListItem.spec.tsx">
+    <testCase name="ListItem renders schemas" duration="42"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Settings/__test__/ConfigListItem.spec.tsx">
+    <testCase name="renders with CustomValue" duration="177"/>
+    <testCase name="renders without CustomValue" duration="29"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/lib/hooks/__tests__/useDataSaver.spec.tsx">
+    <testCase name="useDataSaver hook Save as file downloads json file" duration="9"/>
+    <testCase name="useDataSaver hook Save as file downloads txt file" duration="3"/>
+    <testCase name="useDataSaver hook copies the data to the clipboard data with type Object" duration="3"/>
+    <testCase name="useDataSaver hook copies the data to the clipboard data with type String" duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/Tabs/__tests__/Tabs.spec.tsx">
+    <testCase name="Tabs component renders the tabs with default index 0" duration="2"/>
+    <testCase name="Tabs component renders the list of tabs" duration="1"/>
+    <testCase name="Tabs component renders the children" duration="8"/>
+    <testCase name="Tabs component matches the snapshot" duration="6"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Topics/Topic/Details/Messages/MessageContent/__tests__/MessageContent.styled.spec.tsx">
+    <testCase name="MessageContent Styled Components PaginationComponent should test the Pagination Button theme related Props" duration="54"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/connect/__test__/selectors.spec.ts">
+    <testCase name="Connect selectors Initial State returns initial values" duration="7"/>
+    <testCase name="Connect selectors state returns connects" duration="3"/>
+    <testCase name="Connect selectors state returns connectors" duration="2"/>
+    <testCase name="Connect selectors state returns connector" duration="2"/>
+    <testCase name="Connect selectors state returns connector tasks" duration="4"/>
+    <testCase name="Connect selectors state returns connector config" duration="1"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/table/__tests__/SortableColumnHeader.spec.tsx">
+    <testCase name="ListHeader matches the snapshot" duration="4"/>
+    <testCase name="ListHeader on column click calls setOrderBy" duration="4"/>
+    <testCase name="ListHeader on column click matches the snapshot" duration="13"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/consumerGroups/__test__/consumerGroupSlice.spec.ts">
+    <testCase name="Consumer Groups Slice Actions should test the sortBy actions" duration="5"/>
+    <testCase name="Consumer Groups Slice Thunk Actions should check the fetchConsumerPaged " duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/brokers/__test__/reducer.spec.ts">
+    <testCase name="Brokers slice reducer returns the initial state" duration="5"/>
+    <testCase name="Brokers slice reducer reacts on fetchBrokers.fullfiled and returns payload" duration="6"/>
+    <testCase name="Brokers slice reducer reacts on fetchClusterStats.fullfiled and returns payload" duration="0"/>
+    <testCase name="Brokers slice thunks fetchBrokers creates fetchBrokers.fulfilled when broker are fetched" duration="11"/>
+    <testCase name="Brokers slice thunks fetchBrokers creates fetchBrokers.rejected when fetched clusters" duration="9"/>
+    <testCase name="Brokers slice thunks fetchClusterStats creates fetchClusterStats.fulfilled when broker are fetched" duration="2"/>
+    <testCase name="Brokers slice thunks fetchClusterStats creates fetchClusterStats.rejected when fetched clusters" duration="1"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/topics/__test__/reducer.spec.ts">
+    <testCase name="topics reducer delete topic deletes the topic from the list on DELETE_TOPIC__SUCCESS" duration="3"/>
+    <testCase name="topics reducer delete topic delete topic messages on CLEAR_TOPIC_MESSAGES__SUCCESS" duration="0"/>
+    <testCase name="topics reducer delete topic recreate topic" duration="2"/>
+    <testCase name="topics reducer search topics sets the search string" duration="1"/>
+    <testCase name="topics reducer order topics sets the orderBy" duration="1"/>
+    <testCase name="topics reducer topic consumer groups GET_TOPIC_CONSUMER_GROUPS__SUCCESS" duration="3"/>
+    <testCase name="topics reducer message sending adds message shema after fetching it" duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/clusters/__test__/reducer.spec.ts">
+    <testCase name="Clusters Slice Reducer returns the initial state" duration="1"/>
+    <testCase name="Clusters Slice Reducer reacts on fetchClusters.fulfilled and returns payload" duration="1"/>
+    <testCase name="Clusters Slice thunks fetchClusters creates fetchClusters.fulfilled when fetched clusters" duration="11"/>
+    <testCase name="Clusters Slice thunks fetchClusters creates fetchClusters.rejected when fetched clusters" duration="2"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/lib/__test__/paths.spec.ts">
+    <testCase name="Paths gitCommitPath" duration="2"/>
+    <testCase name="Paths clusterPath" duration="0"/>
+    <testCase name="Paths clusterBrokersPath" duration="0"/>
+    <testCase name="Paths clusterConsumerGroupsPath" duration="45"/>
+    <testCase name="Paths clusterConsumerGroupDetailsPath" duration="1"/>
+    <testCase name="Paths clusterConsumerGroupResetOffsetsPath" duration="0"/>
+    <testCase name="Paths clusterSchemasPath" duration="0"/>
+    <testCase name="Paths clusterSchemaNewPath" duration="13"/>
+    <testCase name="Paths clusterSchemaPath" duration="16"/>
+    <testCase name="Paths clusterSchemaEditPath" duration="0"/>
+    <testCase name="Paths clusterTopicsPath" duration="0"/>
+    <testCase name="Paths clusterTopicNewPath" duration="4"/>
+    <testCase name="Paths clusterTopicPath" duration="0"/>
+    <testCase name="Paths clusterTopicSettingsPath" duration="1"/>
+    <testCase name="Paths clusterTopicConsumerGroupsPath" duration="2"/>
+    <testCase name="Paths clusterTopicMessagesPath" duration="0"/>
+    <testCase name="Paths clusterTopicSendMessagePath" duration="0"/>
+    <testCase name="Paths clusterTopicEditPath" duration="1"/>
+    <testCase name="Paths clusterConnectsPath" duration="0"/>
+    <testCase name="Paths clusterConnectorsPath" duration="24"/>
+    <testCase name="Paths clusterConnectorNewPath" duration="0"/>
+    <testCase name="Paths clusterConnectConnectorPath" duration="0"/>
+    <testCase name="Paths clusterConnectConnectorEditPath" duration="0"/>
+    <testCase name="Paths clusterConnectConnectorTasksPath" duration="1"/>
+    <testCase name="Paths clusterConnectConnectorConfigPath" duration="0"/>
+    <testCase name="Paths clusterKsqlDbPath" duration="1"/>
+    <testCase name="Paths clusterKsqlDbPath with default value" duration="0"/>
+    <testCase name="Paths clusterKsqlDbQueryPath" duration="0"/>
+    <testCase name="Paths clusterKsqlDbQueryPath with default value" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/clusters/__test__/selectors.spec.ts">
+    <testCase name="Clusters selectors Initial State returns fetch status" duration="5"/>
+    <testCase name="Clusters selectors Initial State returns cluster list" duration="0"/>
+    <testCase name="Clusters selectors Initial State returns online cluster list" duration="0"/>
+    <testCase name="Clusters selectors Initial State returns offline cluster list" duration="1"/>
+    <testCase name="Clusters selectors state returns fetch status" duration="0"/>
+    <testCase name="Clusters selectors state returns cluster list" duration="1"/>
+    <testCase name="Clusters selectors state returns online cluster list" duration="0"/>
+    <testCase name="Clusters selectors state returns offline cluster list" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/alerts/__test__/reducer.spec.ts">
+    <testCase name="Alerts reducer does not create error alert" duration="6"/>
+    <testCase name="Alerts reducer creates error alert" duration="1"/>
+    <testCase name="Alerts reducer removes alert by ID" duration="1"/>
+    <testCase name="Alerts reducer does not remove alert if id is wrong" duration="0"/>
+    <testCase name="Alerts reducer Alert thunks dismisses alert after showing success alert" duration="1"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/redux/reducers/alerts/__test__/selectors.spec.ts">
+    <testCase name="Alerts selectors Initial State returns empty alert list" duration="1"/>
+    <testCase name="Alerts selectors state returns fetch status" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Dashboard/__test__/Dashboard.spec.tsx">
+    <testCase name="Dashboard renders ClustersWidget" duration="20"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/lib/__test__/yupExtended.spec.ts">
+    <testCase name="yup extended isValidJsonObject returns false for no value" duration="1"/>
+    <testCase name="yup extended isValidJsonObject returns false for invalid string" duration="0"/>
+    <testCase name="yup extended isValidJsonObject returns false on parsing error" duration="0"/>
+    <testCase name="yup extended isValidJsonObject returns true for valid JSON object" duration="1"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/lib/__test__/propertyLookup.spec.ts">
+    <testCase name="Property Lookup returns undefined if property not found" duration="1"/>
+    <testCase name="Property Lookup returns value of nested property if it exists" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/Version/__tests__/compareVersions.spec.ts">
+    <testCase name="compareVersions function single-segment versions" duration="1"/>
+    <testCase name="compareVersions function two-segment versions" duration="1"/>
+    <testCase name="compareVersions function three-segment versions" duration="0"/>
+    <testCase name="compareVersions function different number of digits in same group" duration="1"/>
+    <testCase name="compareVersions function different number of digits in different groups" duration="0"/>
+    <testCase name="compareVersions function different number of digits" duration="0"/>
+    <testCase name="compareVersions function ignore non-numeric characters" duration="2"/>
+    <testCase name="compareVersions function returns valid result (negative test cases)" duration="0"/>
+  </file>
+  <file path="/Users/work/projects/kafka-ui/kafka-ui-react-app/src/components/common/BytesFormatted/__tests__/BytesFormatted.spec.tsx">
+    <testCase name="BytesFormatted renders Bytes correctly" duration="5"/>
+    <testCase name="BytesFormatted renders correct units" duration="2"/>
+    <testCase name="BytesFormatted renders correct precision" duration="0"/>
+    <testCase name="BytesFormatted correctly handles invalid props" duration="1"/>
+  </file>
+</testExecutions>
