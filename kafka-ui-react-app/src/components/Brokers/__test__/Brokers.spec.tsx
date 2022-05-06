@@ -11,6 +11,10 @@ describe('Brokers Component', () => {
   afterEach(() => fetchMock.reset());
 
   const clusterName = 'local';
+
+  const testInSyncReplicasCount = 798;
+  const testOutOfSyncReplicasCount = 1;
+
   const renderComponent = () =>
     render(
       <Route path={clusterBrokersPath(':clusterName')}>
@@ -48,7 +52,6 @@ describe('Brokers Component', () => {
       const rows = screen.getAllByRole('row');
       expect(rows.length).toEqual(3);
     });
-
     it('shows warning when offlinePartitionCount > 0', async () => {
       const fetchStatsMock = fetchMock.getOnce(fetchStatsUrl, {
         ...clusterStatsPayload,
@@ -70,17 +73,18 @@ describe('Brokers Component', () => {
     it('shows right count when offlinePartitionCount > 0', async () => {
       const fetchStatsMock = fetchMock.getOnce(fetchStatsUrl, {
         ...clusterStatsPayload,
-        inSyncReplicasCount: 798,
-        outOfSyncReplicasCount: 1,
+        inSyncReplicasCount: testInSyncReplicasCount,
+        outOfSyncReplicasCount: testOutOfSyncReplicasCount,
       });
       renderComponent();
       await waitFor(() => {
         expect(fetchStatsMock.called()).toBeTruthy();
       });
 
-      const onlineWidgetDef = screen.getByText('798');
-      const onlineWidget = screen.getByText('of 799');
-      // const onlineIcon = screen.getAllByText()
+      const onlineWidgetDef = screen.getByText(testInSyncReplicasCount);
+      const onlineWidget = screen.getByText(
+        `of ${testInSyncReplicasCount + testOutOfSyncReplicasCount}`
+      );
       expect(onlineWidgetDef).toBeInTheDocument();
       expect(onlineWidget).toBeInTheDocument();
     });
@@ -88,28 +92,28 @@ describe('Brokers Component', () => {
       const fetchStatsMock = fetchMock.getOnce(fetchStatsUrl, {
         ...clusterStatsPayload,
         inSyncReplicasCount: undefined,
-        outOfSyncReplicasCount: 1,
+        outOfSyncReplicasCount: testOutOfSyncReplicasCount,
       });
       renderComponent();
       await waitFor(() => {
         expect(fetchStatsMock.called()).toBeTruthy();
       });
 
-      const onlineWidget = screen.getByText('of 1');
+      const onlineWidget = screen.getByText(`of ${testOutOfSyncReplicasCount}`);
       expect(onlineWidget).toBeInTheDocument();
     });
-    it('shows right count when inSyncReplicasCount: 47 outOfSyncReplicasCount: undefined', async () => {
+    it(`shows right count when inSyncReplicasCount: ${testInSyncReplicasCount} outOfSyncReplicasCount: undefined`, async () => {
       const fetchStatsMock = fetchMock.getOnce(fetchStatsUrl, {
         ...clusterStatsPayload,
-        inSyncReplicasCount: 47,
+        inSyncReplicasCount: testInSyncReplicasCount,
         outOfSyncReplicasCount: undefined,
       });
       renderComponent();
       await waitFor(() => {
         expect(fetchStatsMock.called()).toBeTruthy();
       });
-      const onlineWidgetDef = screen.getByText('47');
-      const onlineWidget = screen.getByText('of 47');
+      const onlineWidgetDef = screen.getByText(testInSyncReplicasCount);
+      const onlineWidget = screen.getByText(`of ${testInSyncReplicasCount}`);
       expect(onlineWidgetDef).toBeInTheDocument();
       expect(onlineWidget).toBeInTheDocument();
     });
